@@ -4,14 +4,22 @@ import classes from "./App.module.css"
 
 
 
+/* [goal] - Use an API to play around with some data */
+
 function App() {
 
   const [users, setUsers] = useState({
     name: "",
     address: ""
   })
+  const [toggleUsers, setToggleUsers] = useState(false)
 
-  
+
+
+  const buttonHandler = () => {
+    setToggleUsers(!toggleUsers)
+  }
+
   return (
     <div className={classes.app}>
       <header className={classes.header}>
@@ -19,6 +27,7 @@ function App() {
         <div></div>
       </header>
       <div className={classes.dataContainer}></div>
+      <button className={classes.btn}>Show Data</button>
     </div>
   );
 }
