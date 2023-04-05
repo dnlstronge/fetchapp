@@ -21,8 +21,12 @@
 }
 .dataContainer {
     display: flex;
-    height: 10rem;
-    width: 70%;
+    flex-basis: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    height: auto;
+    width: auto;
     margin: 15%;
     margin-bottom: 1rem;
     background-color: white;
@@ -50,4 +54,19 @@
 
 .btn:hover {
     background-color: rgb(222, 169, 222);
+}
+
+.userbox {
+    font-size: 9px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0.2rem;
+    padding: 0.2rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: 3rem;
+    width: 6rem;
+    border-radius: 5px;
+    color: white;
+    background-color: purple;
 }

@@ -11,13 +11,17 @@ function App() {
   const [toggleUsers, setToggleUsers] = useState(false);
   const fetchUsers = async() => {
     const response = await fetch("https://jsonplaceholder.typicode.com/users")
-    console.log(response)
+    const data = await response.json()
+    console.log(data)
+    setUsers(data)
   }
 
   const buttonHandler = () => {
+    setToggleUsers(!toggleUsers)
     fetchUsers()
-    setToggleUsers(!toggleUsers);
+
   };
+
 
 
 
@@ -25,11 +29,19 @@ function App() {
     <div className={classes.app}>
       <header className={classes.header}>
         <h2 className={classes.heading}>API Fetch Practice</h2>
-        <div></div>
       </header>
 
       <div className={classes.dataContainer}>
-        {toggleUsers && <p>I AM A TEST PARAGRAPH</p>}
+        
+         {toggleUsers && users.length > 0 && 
+            users.map(user => { return (
+                <div className={classes.userbox}>
+                  <p>Name: {user.name}</p>
+                  <p>Username: {user.username}</p>
+                </div>
+                )})}
+            
+        
       </div>
       <button onClick={buttonHandler} className={classes.btn}>
         Show Data
