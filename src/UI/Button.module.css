@@ -1,11 +1,13 @@
 .btn {
     display: flex;
     color: white;
-    background-color: rgb(242, 173, 242);
+    background-color: purple;
     height: 3rem;
     width: 6rem;
     border-radius: 6px;
+    padding: 0.2rem;
+    margin-left: 0.2rem
 }
 .btn:hover {
-    background-color: rgb(238, 77, 238);
+    background-color: rgb(162, 101, 162);
 }

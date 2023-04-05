@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import classes from "./Users.module.css";
 
 const Users = () => {
+  const [isLoading, setIsloading] = useState(false)
   const [users, setUsers] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [toggleUsers, setToggleUsers] = useState(false);
@@ -33,6 +34,7 @@ const Users = () => {
 
   return (
     <>
+      
       {toggleUsers && (
         <label className={classes.searchbarLabel} htmlFor="searchinput">
           Filter by username
