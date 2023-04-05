@@ -5,6 +5,7 @@ import classes from "./App.module.css";
 /* [goal] - Use an API to play around with some data */
 
 function App() {
+  const [filtered, setFiltered] = useState([])
   const [users, setUsers] = useState({
    
   });
@@ -17,12 +18,21 @@ function App() {
   }
 
   const buttonHandler = () => {
+    console.log(users[0])
     setToggleUsers(!toggleUsers)
     fetchUsers()
 
   };
 
-
+  const handleFilter = (e) => {
+    
+    let namefilter = e.target.value.toUpperCase()
+    let filteredArray = users.filter(user => user.username.charAt(0) === namefilter)
+    console.log(filteredArray)
+     
+   // setFiltered(users.filter(user => user.name.charAt(0).toLowerCase === ""))
+   // console.log(filtered)
+  }
 
 
   return (
@@ -30,21 +40,25 @@ function App() {
       <header className={classes.header}>
         <h2 className={classes.heading}>API Fetch Practice</h2>
       </header>
-
+      {toggleUsers && 
+      <label className={classes.searchbarLabel} htmlFor="searchinput">
+        <input id="searchinput" className={classes.searchbar} type="text" placeholder="search" onChange={handleFilter}></input>
+        </label>}
       <div className={classes.dataContainer}>
         
          {toggleUsers && users.length > 0 && 
-            users.map(user => { return (
-                <div className={classes.userbox}>
-                  <p>Name: {user.name}</p>
-                  <p>Username: {user.username}</p>
+            users.map(user => { return ( 
+                <div key={user.id} className={classes.userbox}>
+                  <p className={classes.userpara}>Name: {user.name}</p>
+                  <p className={classes.userpara}>Username: {user.username}</p>
+                  <p className={classes.userpara}>Website: {user.website}</p>
                 </div>
                 )})}
             
         
       </div>
       <button onClick={buttonHandler} className={classes.btn}>
-        Show Data
+        {toggleUsers ? "SHOW" : "HIDE"}
       </button>
     </div>
   );
