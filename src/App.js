@@ -17,6 +17,7 @@ function App() {
 
 
   const buttonHandler = () => {
+    console.log("change handler fired")
     setToggleUsers(!toggleUsers)
   }
 
@@ -26,8 +27,12 @@ function App() {
         <h2 className={classes.heading}>API Fetch Practice</h2>
         <div></div>
       </header>
-      <div className={classes.dataContainer}></div>
-      <button className={classes.btn}>Show Data</button>
+      
+      <div className={classes.dataContainer}>
+        {toggleUsers && 
+        <p>I AM A TEST PARAGRAPH</p>}
+      </div>
+      <button onClick={buttonHandler} className={classes.btn}>Show Data</button>
     </div>
   );
 }
