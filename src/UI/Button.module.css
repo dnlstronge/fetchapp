@@ -1,0 +1,11 @@
+.btn {
+    display: flex;
+    color: white;
+    background-color: rgb(242, 173, 242);
+    height: 3rem;
+    width: 6rem;
+    border-radius: 6px;
+}
+.btn:hover {
+    background-color: rgb(238, 77, 238);
+}
