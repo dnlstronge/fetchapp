@@ -23,7 +23,7 @@ const Users = () => {
     if (e.target.value.length > 0) {
       let namefilter = e.target.value.toUpperCase();
       let filteredArray = users.filter(
-        (user) => user.username.charAt(0) === namefilter
+        (user) => user.username.charAt(0).toUpperCase() === namefilter || user.username.toUpperCase().includes(namefilter)
       );
 
       setFiltered(filteredArray);
