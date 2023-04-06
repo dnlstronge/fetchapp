@@ -57,7 +57,8 @@ const Dogs = () => {
         <p className={classes.sectionPara}>
           In this section I used a free dogs API to get data. When the user
           clicks the button a fetch request gets random dog images and displays
-          them to the user.</p>
+          them to the user. The API provides 50 dogs, the app then returns and maps 5 at random
+          when the user clicks the button</p>
           <section className={classes.btnsection}> 
             <Button onClick={handleDogs} id="dogs" text="Show me Dogs" />
           </section>
