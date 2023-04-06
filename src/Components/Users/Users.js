@@ -34,6 +34,13 @@ const Users = () => {
 
   return (
     <>
+        <section className={classes.section}>
+          <h4 className={classes.subHeading}>
+            <p className={classes.subPara}>This section uses the JSON placeholder api. It fetches some data (users) and displays different
+            users inside a panel. A filter can then be applied to the cards shown based on username</p>
+            <p className={classes.subPara}>URL: <a className={classes.subAnchor} href="https://jsonplaceholder.typicode.com/:">https://jsonplaceholder.typicode.com/:</a></p>
+          </h4>
+        </section>
        <button onClick={buttonHandler} className={classes.btn}>
         {toggleUsers ? "Hide Users" : "Show Users"}
       </button>
