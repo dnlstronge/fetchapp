@@ -10,6 +10,9 @@
 .heading {
     color: white;
     margin-left: 3rem;
+    margin-right: 3rem;
+    text-align: left;
+    
 }
 .sectionPara {
     display: flex;

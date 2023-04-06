@@ -92,8 +92,8 @@ const Dogs = () => {
           
        
       {dogs && (
-        <section>
-          <img src={dogData.message[0]} alt="dog" />
+        <section className={classes.sectionImages} >
+          <img className={classes.images} src={dogData.message[0]} alt="dog" />
           <p>{`Dogs be present at URL: ${dogData.message[1]}`}</p>
         </section>
       )}
