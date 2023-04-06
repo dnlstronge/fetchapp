@@ -13,6 +13,7 @@ gonna use: https://dog.ceo/dog-api/  */
 const dogURL = "https://dog.ceo/dog-api/50"
 
 const Dogs = () => {
+  const [dogData, setDogData] = useState([]);
   const [error, setError] = useState({
     isError: false,
     status: null,
@@ -32,10 +33,22 @@ const Dogs = () => {
         setError({isError: true, status: error.status, msg: error.message})
     }
   }
-  const [dogData, setDogData] = useState([]);
+ 
+
+  const handleDogs = () => {
+    fetchDogs()
+  }
 
   return <div className={classes.container}>
+
     <ErrorComp status={error.status} msg={error.msg} />
+    <section className={classes.section}>
+        <h2 className={classes.sectionHead}>Who let the dogs out.....?</h2>
+        <p className={classes.sectionPara}>In this section I used a free dogs API to get data. When the user clicks the button 
+        a fetch request gets random dog images and displays them to the user. </p>
+            {/* Insert link logic and paras */}
+    </section>
+    <Button onClick={handleDogs} id="dogs" />
   </div>;
 };
 
