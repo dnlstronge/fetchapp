@@ -35,8 +35,10 @@ const handleLater = () => {}
         <Button id="nextAPI" text="Next API" />
         <Button id="laterAPI" text="Later API" />
       </div>
-      <Home></Home>
-      <Users />
+      {showPage.home &&
+      <Home></Home> }
+      {showPage.userAPI &&
+      <Users />}
     </div>
   );
 };

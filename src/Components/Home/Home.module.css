@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    width: 100%;
+    margin-bottom: 40%;
+}
+.heading {
+    color: white;
+    margin-left: 3rem;
+}
+.sectionPara {
+    color: white;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
