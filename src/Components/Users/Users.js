@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import classes from "./Users.module.css";
+import ErrorComp from "../../UI/Errors/ErrorComp"
 
 const Users = () => {
   const [isLoading, setIsloading] = useState(false);
@@ -15,7 +16,7 @@ const Users = () => {
   const fetchUsers = async () => {
     setIsloading(true);
     try {
-    const response = await fetch("https://jsonplaceholder.typicode.com/use");
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
     const data = await response.json();
     if(response?.ok) {
       setError({isError: false, status: null, msg: null})
@@ -83,8 +84,10 @@ const Users = () => {
       <button onClick={buttonHandler} className={classes.btn}>
         {toggleUsers ? "Hide Users" : "Show Users"}
       </button>
+      {error.isError && 
+      <ErrorComp status={error.status} msg={error.msg} />}
       {isLoading && <div className={classes.loading}>Loading....</div>}
-      {toggleUsers && (
+      {toggleUsers && !error.isError && (
         <label className={classes.searchbarLabel} htmlFor="searchinput">
           Filter by username
           <input
@@ -96,11 +99,7 @@ const Users = () => {
           ></input>
         </label>
       )}
-      {error.isError && 
-      <div className={classes.error}>
-        <h2 className={classes.errorHead}>{error.status}</h2>
-        <p className={classes.errorMsg}>{error.msg}</p>
-      </div>}
+      
       {!error.isError && 
       <div className={classes.dataContainer}>
         {filtered.length < 1 && (
