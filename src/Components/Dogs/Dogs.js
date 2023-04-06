@@ -91,12 +91,13 @@ const Dogs = () => {
         <Button onClick={handleDogs} id="dogs" text="Show me Dogs" />
       </section>
 
-      {dogs && (
+      {dogs && 
         <section className={classes.sectionImages}>
-          <img className={classes.images} src={dogData.message[0]} alt="dog" />
-          <p>{`Dogs be present at URL: ${dogData.message[1]}`}</p>
+        {dogData.message.map(dog => {
+           return  <img className={classes.images} src={dog} alt="dog" />})
+          }
         </section>
-      )}
+      }
       <ErrorComp status={error.status} msg={error.msg} />
 
       {/* Insert link logic and paras */}
