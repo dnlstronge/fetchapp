@@ -17,12 +17,20 @@ const App = () => {
     nextAPI: false,
     laterAPI: false
   })
-  /* move logic to new component */
 
-const handleHome = () => {}
-const handleUser = () => {}
-const handleNext = () => {}
-const handleLater = () => {}
+
+const handleHome = () => {
+  setShowPage({home: true, userAPI: false, nextAPI: false, laterAPI: false})
+}
+const handleUser = () => {
+  setShowPage({home: false, userAPI: true, nextAPI: false, laterAPI: false})
+}
+const handleNext = () => {
+  setShowPage({home: false, userAPI: false, nextAPI: true, laterAPI: false})
+}
+const handleLater = () => {
+  setShowPage({home: false, userAPI: false, nextAPI: false, laterAPI: true})
+}
 
   return (
     <div className={classes.app}>
