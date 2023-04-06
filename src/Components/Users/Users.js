@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import classes from "./Users.module.css";
-import ErrorComp from "../../UI/Errors/ErrorComp"
+import ErrorComp from "../../UI/Errors/ErrorComp";
 import useErrorHandler from "../../Hooks/useErrorHandler";
 
 const Users = () => {
@@ -8,8 +8,8 @@ const Users = () => {
   const [error, setError] = useState({
     isError: false,
     status: null,
-    msg: null
-  })
+    msg: null,
+  });
   const [users, setUsers] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [toggleUsers, setToggleUsers] = useState(false);
@@ -17,30 +17,28 @@ const Users = () => {
   const fetchUsers = async () => {
     setIsloading(true);
     try {
-    const response = await fetch("https://jsonplaceholder.typicode.com/use");
-    const data = await response.json();
-    if(response?.ok) {
-      setError({isError: false, status: null, msg: null})
-    if (data) {
-      setIsloading(false);
-      setUsers(data);
-      setFiltered(data);
-    }} else {
-      setIsloading(false)
-      //setError({isError: true, status: response.status, msg: `Error: ${response.status} something went wrong`})
-      // eslint-disable-next-line react-hooks/rules-of-hooks
-      useErrorHandler(response, setError)
-      
-      console.log(`Error: ${response.status} something went wrong`)
+      const response = await fetch("https://jsonplaceholder.typicode.com/use");
+      const data = await response.json();
+      if (response?.ok) {
+        setError({ isError: false, status: null, msg: null });
+        if (data) {
+          setIsloading(false);
+          setUsers(data);
+          setFiltered(data);
+        }
+      } else {
+        setIsloading(false);
+        //setError({isError: true, status: response.status, msg: `Error: ${response.status} something went wrong`})
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        useErrorHandler(response, setError);
 
-    }
+        //console.log(`Error: ${response.status} something went wrong`)
+      }
     } catch (error) {
       //console.log(error.message)
-      setIsloading(false)
-      setError({isError: true, status: error.status, msg: error.message})
-      
+      setIsloading(false);
+      setError({ isError: true, status: error.status, msg: error.message });
     }
-    
   };
 
   const buttonHandler = () => {
@@ -89,8 +87,7 @@ const Users = () => {
       <button onClick={buttonHandler} className={classes.btn}>
         {toggleUsers ? "Hide Users" : "Show Users"}
       </button>
-      {error.isError && 
-      <ErrorComp status={error.status} msg={error.msg} />}
+      {error.isError && <ErrorComp status={error.status} msg={error.msg} />}
       {isLoading && <div className={classes.loading}>Loading....</div>}
       {toggleUsers && !error.isError && (
         <label className={classes.searchbarLabel} htmlFor="searchinput">
@@ -104,24 +101,25 @@ const Users = () => {
           ></input>
         </label>
       )}
-      
-      {!error.isError && 
-      <div className={classes.dataContainer}>
-        {filtered.length < 1 && (
-          <p className={classes.userparaError}>No users Found</p>
-        )}
-        {toggleUsers &&
-          filtered.length > 0 &&
-          filtered.map((user) => {
-            return (
-              <div key={user.id} className={classes.userbox}>
-                <p className={classes.userpara}>Name: {user.name}</p>
-                <p className={classes.userpara}>Username: {user.username}</p>
-                <p className={classes.userpara}>Website: {user.website}</p>
-              </div>
-            );
-          })}
-      </div>}
+
+      {!error.isError && (
+        <div className={classes.dataContainer}>
+          {filtered.length < 1 && (
+            <p className={classes.userparaError}>No users Found</p>
+          )}
+          {toggleUsers &&
+            filtered.length > 0 &&
+            filtered.map((user) => {
+              return (
+                <div key={user.id} className={classes.userbox}>
+                  <p className={classes.userpara}>Name: {user.name}</p>
+                  <p className={classes.userpara}>Username: {user.username}</p>
+                  <p className={classes.userpara}>Website: {user.website}</p>
+                </div>
+              );
+            })}
+        </div>
+      )}
     </>
   );
 };
