@@ -3,19 +3,38 @@ import classes from "./Users.module.css";
 
 const Users = () => {
   const [isLoading, setIsloading] = useState(false);
+  const [error, setError] = useState({
+    isError: false,
+    status: null,
+    msg: null
+  })
   const [users, setUsers] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [toggleUsers, setToggleUsers] = useState(false);
 
   const fetchUsers = async () => {
     setIsloading(true);
-    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/use");
     const data = await response.json();
+    if(response?.ok) {
+      setError({isError: false, status: null, msg: null})
     if (data) {
       setIsloading(false);
       setUsers(data);
       setFiltered(data);
+    }} else {
+      setIsloading(false)
+      setError({isError: true, status: response.status, msg: `Error: ${response.status} something went wrong`})
+      console.log(`Error: ${response.status} something went wrong`)
     }
+    } catch (error) {
+      //console.log(error.message)
+      setIsloading(false)
+      setError({isError: true, status: error.status, msg: error.message})
+      
+    }
+    
   };
 
   const buttonHandler = () => {
@@ -77,7 +96,12 @@ const Users = () => {
           ></input>
         </label>
       )}
-
+      {error.isError && 
+      <div className={classes.error}>
+        <h2 className={classes.errorHead}>{error.status}</h2>
+        <p className={classes.errorMsg}>{error.msg}</p>
+      </div>}
+      {!error.isError && 
       <div className={classes.dataContainer}>
         {filtered.length < 1 && (
           <p className={classes.userparaError}>No users Found</p>
@@ -93,7 +117,7 @@ const Users = () => {
               </div>
             );
           })}
-      </div>
+      </div>}
     </>
   );
 };
