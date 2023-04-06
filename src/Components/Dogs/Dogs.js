@@ -53,12 +53,39 @@ const Dogs = () => {
 
   return (
     <div className={classes.container}>
-      <h2 className={classes.sectionHead}>Who let the dogs out.....?</h2>
-        <p className={classes.sectionPara}>
-          In this section I used a free dogs API to get data. When the user
-          clicks the button a fetch request gets random dog images and displays
-          them to the user. The API provides 50 dogs, the app then returns and maps 5 at random
-          when the user clicks the button</p>
+       <section className={classes.section}>
+        <h4 className={classes.subHeading}>
+          <p className={classes.subPara}>
+            This section uses the JSON placeholder api. It fetches some data
+            (users) and displays different users inside a panel. A filter can
+            then be applied to the cards shown based on username. Click show to
+            get data.
+            <br></br><br></br>
+            I've added custom error handling for errors which fall beyond the scope
+            of the fetch API.
+          </p>
+          <p className={classes.subPara}>
+            {`Url: `}
+            <a
+              target="blank"
+              className={classes.subAnchor}
+              href="https://jsonplaceholder.typicode.com/"
+            >
+                 https://jsonplaceholder.typicode.com
+            </a>
+          </p>
+          <p className={classes.subPara}>
+            {`Code: `}
+            <a
+              target="blank"
+              className={classes.subAnchor}
+              href="https://github.com/dnlstronge/fetchapp/tree/master/src/Components/Users"
+            >
+                 https://github.com/dnlstronge/fetchapp
+            </a>
+          </p>
+        </h4>
+      </section>
           <section className={classes.btnsection}> 
             <Button onClick={handleDogs} id="dogs" text="Show me Dogs" />
           </section>
