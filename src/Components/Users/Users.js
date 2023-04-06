@@ -34,7 +34,9 @@ const Users = () => {
 
   return (
     <>
-      
+       <button onClick={buttonHandler} className={classes.btn}>
+        {toggleUsers ? "Hide Users" : "Show Users"}
+      </button>
       {toggleUsers && (
         <label className={classes.searchbarLabel} htmlFor="searchinput">
           Filter by username
@@ -47,6 +49,7 @@ const Users = () => {
           ></input>
         </label>
       )}
+     
       <div className={classes.dataContainer}>
         {filtered.length < 1 && (
           <p className={classes.userparaError}>No users Found</p>
@@ -63,9 +66,7 @@ const Users = () => {
             );
           })}
       </div>
-      <button onClick={buttonHandler} className={classes.btn}>
-        {toggleUsers ? "Hide Users" : "Show Users"}
-      </button>
+      
     </>
   );
 };
