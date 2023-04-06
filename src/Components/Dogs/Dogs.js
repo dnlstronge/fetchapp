@@ -53,16 +53,17 @@ const Dogs = () => {
 
   return (
     <div className={classes.container}>
-       <section className={classes.section}>
+      <section className={classes.section}>
         <h4 className={classes.subHeading}>
           <p className={classes.subPara}>
             This section uses the JSON placeholder api. It fetches some data
             (users) and displays different users inside a panel. A filter can
             then be applied to the cards shown based on username. Click show to
             get data.
-            <br></br><br></br>
-            I've added custom error handling for errors which fall beyond the scope
-            of the fetch API.
+            <br></br>
+            <br></br>
+            I've added custom error handling for errors which fall beyond the
+            scope of the fetch API.
           </p>
           <p className={classes.subPara}>
             {`Url: `}
@@ -71,7 +72,7 @@ const Dogs = () => {
               className={classes.subAnchor}
               href="https://jsonplaceholder.typicode.com/"
             >
-                 https://jsonplaceholder.typicode.com
+              https://jsonplaceholder.typicode.com
             </a>
           </p>
           <p className={classes.subPara}>
@@ -81,28 +82,24 @@ const Dogs = () => {
               className={classes.subAnchor}
               href="https://github.com/dnlstronge/fetchapp/tree/master/src/Components/Users"
             >
-                 https://github.com/dnlstronge/fetchapp
+              https://github.com/dnlstronge/fetchapp
             </a>
           </p>
         </h4>
       </section>
-          <section className={classes.btnsection}> 
-            <Button onClick={handleDogs} id="dogs" text="Show me Dogs" />
-          </section>
-          
-       
+      <section className={classes.btnsection}>
+        <Button onClick={handleDogs} id="dogs" text="Show me Dogs" />
+      </section>
+
       {dogs && (
-        <section className={classes.sectionImages} >
+        <section className={classes.sectionImages}>
           <img className={classes.images} src={dogData.message[0]} alt="dog" />
           <p>{`Dogs be present at URL: ${dogData.message[1]}`}</p>
         </section>
       )}
       <ErrorComp status={error.status} msg={error.msg} />
-      
-      
-        {/* Insert link logic and paras */}
-     
-      
+
+      {/* Insert link logic and paras */}
     </div>
   );
 };
