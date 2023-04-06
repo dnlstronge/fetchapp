@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import classes from "./Users.module.css";
 import ErrorComp from "../../UI/Errors/ErrorComp"
+import useErrorHandler from "../../Hooks/useErrorHandler";
 
 const Users = () => {
   const [isLoading, setIsloading] = useState(false);
@@ -16,7 +17,7 @@ const Users = () => {
   const fetchUsers = async () => {
     setIsloading(true);
     try {
-    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    const response = await fetch("https://jsonplaceholder.typicode.com/use");
     const data = await response.json();
     if(response?.ok) {
       setError({isError: false, status: null, msg: null})
@@ -26,8 +27,12 @@ const Users = () => {
       setFiltered(data);
     }} else {
       setIsloading(false)
-      setError({isError: true, status: response.status, msg: `Error: ${response.status} something went wrong`})
+      //setError({isError: true, status: response.status, msg: `Error: ${response.status} something went wrong`})
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      useErrorHandler(response, setError)
+      
       console.log(`Error: ${response.status} something went wrong`)
+
     }
     } catch (error) {
       //console.log(error.message)
