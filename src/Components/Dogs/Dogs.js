@@ -56,14 +56,14 @@ const Dogs = () => {
       <section className={classes.section}>
         <h4 className={classes.subHeading}>
           <p className={classes.subPara}>
-            This section uses the JSON placeholder api. It fetches some data
-            (users) and displays different users inside a panel. A filter can
-            then be applied to the cards shown based on username. Click show to
-            get data.
+            This section uses a free dog images API to get a list of random dog
+            images, then apply a randomizer logic and map the fetched dogs on
+            screen.
             <br></br>
             <br></br>
-            I've added custom error handling for errors which fall beyond the
-            scope of the fetch API.
+            I've added error handling and loading state. User just needs to
+            click a button to get some dogs. I hadn't tried mapping images much
+            so this was interesting.
           </p>
           <p className={classes.subPara}>
             {`Url: `}
@@ -91,13 +91,13 @@ const Dogs = () => {
         <Button onClick={handleDogs} id="dogs" text="Show me Dogs" />
       </section>
 
-      {dogs && 
+      {dogs && (
         <section className={classes.sectionImages}>
-        {dogData.message.map(dog => {
-           return  <img className={classes.images} src={dog} alt="dog" />})
-          }
+          {dogData.message.map((dog) => {
+            return <img className={classes.images} src={dog} alt="dog" />;
+          })}
         </section>
-      }
+      )}
       <ErrorComp status={error.status} msg={error.msg} />
 
       {/* Insert link logic and paras */}
