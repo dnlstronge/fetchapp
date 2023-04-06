@@ -6,7 +6,7 @@ import classes from "./Home.module.css"
 const Home = () => {
     return (
         <div className={classes.container}>
-            <h2 className={classes.heading}>Welcome fetching funhouse</h2>
+            <h2 className={classes.heading}>Welcome to the Fetching Funhouse</h2>
             <secion className={classes.section}>
                 <p className={classes.sectionPara}>I built this app to play around with different APIs. It makes use of various
                 open-source collections of data. Basicallly I wanted a simple platform on which I could

@@ -101,7 +101,8 @@ const Users = () => {
         {toggleUsers ? "Hide Users" : "Show Users"}
       </button>
       {error.isError && <ErrorComp status={error.status} msg={error.msg} />}
-      {isLoading && <div className={classes.loading}>Loading....</div>}
+      {isLoading &&
+       <div className={classes.loading}>Loading....</div>}
       {toggleUsers && !error.isError && (
         <label className={classes.searchbarLabel} htmlFor="searchinput">
           Filter by username

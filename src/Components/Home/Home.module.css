@@ -4,13 +4,17 @@
     height: 70%;
     width: 100%;
     margin-bottom: 40%;
+    margin-left: 10%;
+    
 }
 .heading {
     color: white;
     margin-left: 3rem;
 }
 .sectionPara {
+    display: flex;
     color: white;
-    margin-left: 3rem;
-    margin-right: 3rem;
+    width: 70%;
+   
+    
 }
