@@ -10,7 +10,7 @@ const Users = () => {
     status: null,
     msg: null,
   });
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState();
   const [filtered, setFiltered] = useState([]);
   const [toggleUsers, setToggleUsers] = useState(false);
 

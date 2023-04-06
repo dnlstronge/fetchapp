@@ -4,6 +4,7 @@ import classes from "./App.module.css";
 import Users from "./Components/Users/Users";
 import Button from "./UI/Button";
 import Home from "./Components/Home/Home";
+import Dogs from "./Components/Dogs/Dogs";
 
 /* [goal] - Use an API to play around with some data */
 
@@ -14,22 +15,22 @@ const App = () => {
   const [showPage, setShowPage] = useState({
     home: true,
     userAPI: false,
-    nextAPI: false,
+    dogsAPI: false,
     laterAPI: false
   })
 
 
 const handleHome = () => {
-  setShowPage({home: true, userAPI: false, nextAPI: false, laterAPI: false})
+  setShowPage({home: true, userAPI: false, dogsAPI: false, laterAPI: false})
 }
 const handleUser = () => {
-  setShowPage({home: false, userAPI: true, nextAPI: false, laterAPI: false})
+  setShowPage({home: false, userAPI: true, dogsAPI: false, laterAPI: false})
 }
-const handleNext = () => {
-  setShowPage({home: false, userAPI: false, nextAPI: true, laterAPI: false})
+const handleDogs = () => {
+  setShowPage({home: false, userAPI: false, dogsAPI: true, laterAPI: false})
 }
 const handleLater = () => {
-  setShowPage({home: false, userAPI: false, nextAPI: false, laterAPI: true})
+  setShowPage({home: false, userAPI: false, dogsAPI: false, laterAPI: true})
 }
 
   return (
@@ -40,13 +41,15 @@ const handleLater = () => {
       <div className={classes.btnContainer}>
         <Button onClick={handleHome} id="Home" text="Home" />
         <Button onClick={handleUser} id="userAPI" text="User API" />
-        <Button id="nextAPI" text="Next API" />
+        <Button onClick={handleDogs} id="Dogs API" text="Dogs API" />
         <Button id="laterAPI" text="Later API" />
       </div>
       {showPage.home &&
       <Home></Home> }
       {showPage.userAPI &&
       <Users />}
+      {showPage.dogsAPI &&
+        <Dogs />}
     </div>
   );
 };
