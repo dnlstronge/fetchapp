@@ -17,7 +17,7 @@ const Users = () => {
   const fetchUsers = async () => {
     setIsloading(true);
     try {
-      const response = await fetch("https://jsonplaceholder.typicode.com/use");
+      const response = await fetch("https://jsonplaceholder.typicode.com/users");
       const data = await response.json();
       if (response?.ok) {
         setError({ isError: false, status: null, msg: null });
@@ -71,15 +71,28 @@ const Users = () => {
             (users) and displays different users inside a panel. A filter can
             then be applied to the cards shown based on username. Click show to
             get data.
+            <br></br><br></br>
+            I've added custom error handling for errors which fall beyond the scope
+            of the fetch API.
           </p>
           <p className={classes.subPara}>
-            URL:{" "}
+            {`Url: `}
             <a
               target="blank"
               className={classes.subAnchor}
-              href="https://jsonplaceholder.typicode.com/:"
+              href="https://jsonplaceholder.typicode.com/"
             >
-              https://jsonplaceholder.typicode.com/:
+                 https://jsonplaceholder.typicode.com
+            </a>
+          </p>
+          <p className={classes.subPara}>
+            {`Code: `}
+            <a
+              target="blank"
+              className={classes.subAnchor}
+              href="https://github.com/dnlstronge/fetchapp/tree/master/src/Components/Users"
+            >
+                 https://github.com/dnlstronge/fetchapp
             </a>
           </p>
         </h4>
