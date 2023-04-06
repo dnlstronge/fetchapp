@@ -8,7 +8,7 @@ import classes from "./Button.module.css"
 
 Button Props Config: 
 
-onClick: onClick (points to handker)
+onClick: onClick (points to handler)
 id: "user API" (points to what its use is)
 text: "Input text"
 

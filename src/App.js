@@ -15,6 +15,7 @@ const App = () => {
         <h2 className={classes.heading}>API Fetching Funhouse</h2>
       </header>
       <div className={classes.btnContainer}>
+        <Button id="Home" text="Home" />
         <Button id="userAPI" text="User API" />
         <Button id="nextAPI" text="Next API" />
         <Button id="laterAPI" text="Later API" />
