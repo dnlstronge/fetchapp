@@ -3,11 +3,26 @@ import React, { useState, useEffect } from "react";
 import classes from "./App.module.css";
 import Users from "./Components/Users/Users";
 import Button from "./UI/Button";
+import Home from "./Components/Home/Home";
 
 /* [goal] - Use an API to play around with some data */
 
 const App = () => {
+
+  /* state for different APIs, in future group these into different pages */
+
+  const [showPage, setShowPage] = useState({
+    home: true,
+    userAPI: false,
+    nextAPI: false,
+    laterAPI: false
+  })
   /* move logic to new component */
+
+const handleHome = () => {}
+const handleUser = () => {}
+const handleNext = () => {}
+const handleLater = () => {}
 
   return (
     <div className={classes.app}>
@@ -20,6 +35,7 @@ const App = () => {
         <Button id="nextAPI" text="Next API" />
         <Button id="laterAPI" text="Later API" />
       </div>
+      <Home></Home>
       <Users />
     </div>
   );
