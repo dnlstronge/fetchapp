@@ -76,3 +76,8 @@
     color: black;
     margin: 0.1rem;
 }
+.loading {
+    font-size: 20px;
+    color: white;
+    margin-left: 40%;
+}
