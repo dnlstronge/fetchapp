@@ -5,6 +5,7 @@ import Users from "./Components/Users/Users";
 import Button from "./UI/Button";
 import Home from "./Components/Home/Home";
 import Dogs from "./Components/Dogs/Dogs";
+import DogsTwo from "./Components/Dogs/DogsTwo";
 
 /* [goal] - Use an API to play around with some data */
 
@@ -16,21 +17,21 @@ const App = () => {
     home: true,
     userAPI: false,
     dogsAPI: false,
-    laterAPI: false
+    laterAPIII: false
   })
 
 
 const handleHome = () => {
-  setShowPage({home: true, userAPI: false, dogsAPI: false, laterAPI: false})
+  setShowPage({home: true, userAPI: false, dogsAPI: false, dogsAPIII: false})
 }
 const handleUser = () => {
-  setShowPage({home: false, userAPI: true, dogsAPI: false, laterAPI: false})
+  setShowPage({home: false, userAPI: true, dogsAPI: false, dogsAPIII: false})
 }
 const handleDogs = () => {
-  setShowPage({home: false, userAPI: false, dogsAPI: true, laterAPI: false})
+  setShowPage({home: false, userAPI: false, dogsAPI: true, dogsAPIII: false})
 }
-const handleLater = () => {
-  setShowPage({home: false, userAPI: false, dogsAPI: false, laterAPI: true})
+const handleDogsII = () => {
+  setShowPage({home: false, userAPI: false, dogsAPI: false, dogsAPIII: true})
 }
 
   return (
@@ -42,7 +43,7 @@ const handleLater = () => {
         <Button onClick={handleHome} id="Home" text="Home" />
         <Button onClick={handleUser} id="userAPI" text="User API" />
         <Button onClick={handleDogs} id="Dogs API" text="Dogs API" />
-        <Button id="laterAPI" text="Later API" />
+        <Button onClick={handleDogsII} id="Dogs API II" text="Dogs API II" />
       </div>
       {showPage.home &&
       <Home></Home> }
@@ -50,6 +51,8 @@ const handleLater = () => {
       <Users />}
       {showPage.dogsAPI &&
         <Dogs />}
+      {showPage.dogsAPIII && 
+        <DogsTwo />}
     </div>
   );
 };
