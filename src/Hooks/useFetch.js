@@ -10,25 +10,40 @@ why not have just one object?
 */
 
 const useFetch = async(url) => {
-    const [isLoading, setIsLoading] = useState()
-    const [data, setData] = useState()
-    const [error, setError] = useState({
-        isError: false,
+    const [response, setResponse] = useState({
         status: null,
-        msg: null
+        isLoading: false,
+        error: {isError: false, msg: null}, 
+        data: []
+
     })
+  
     try {
         const res = await fetch(url)
         const data = await res.json()
         if(res?.ok) {
-            setError({isError: false})
-            setData(data)
+            setResponse({
+                status: res.status,
+                isLoading: false,
+                error: {isError: false, msg: null},
+                data: data
+            })
         } else {
-            setError({isError: true, status: res.status, msg: `Error: ${res.status}! Something went wrong` })
+            setResponse({
+                ...response, 
+                isLoading: false, 
+                status: res.status, 
+                error: {isError: true, msg: `Error: ${res.status}! Something went wrong` }})
             
         }
     } catch (error) {
-        setError({isError: true, status: error.status, msg: error.message})
+        setResponse({...response, 
+                    isLoading: false, 
+                    status: error.status,
+                    error: {
+                        isError: true, 
+                        msg: error.msg
+                    } })
         
     }
 }
