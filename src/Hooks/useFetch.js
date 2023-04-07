@@ -11,13 +11,24 @@ import { useState, useEffect } from "react";
 
 
   const useFetch = (url) => {
-    const [data, setData] = useState(null) 
+    const [data, setData] = useState({
+      loading: false,
+      Error: null,
+      data: []
+    }) 
     
   
     useEffect(() => {
-      fetch(url)
+      setData({loading: true, error: null, data: []})
+      try {
+        fetch(url)
         .then((res) => res.json())
-        .then((data) => setData(data));
+        .then((data) => setData({loading: false, error: null, data: data}));
+        
+      } catch (error) {
+        setData({loading: false, error: true, data: [] })
+      }
+     
     }, [url]);
   
     return [data];

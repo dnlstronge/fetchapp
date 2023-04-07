@@ -8,13 +8,10 @@ import useFetch from "../../Hooks/useFetch";
 const DogsTwo = () => {
   const [data, setData] = useState();
   const [response] = useFetch("https://dog.ceo/api/breeds/image/random/3") 
+  
 
 
-
-    useEffect(() => {
-        console.log(response)
-    }, [response])
-
+ 
   return (
     <div className={classes.container}>
       <h4 className={classes.heading}>
@@ -26,6 +23,8 @@ const DogsTwo = () => {
           used free api.
         </p>
         <Button text="Show me dogs"></Button>
+        <p>Loading...</p>
+        <section className={classes.section}></section>
       </h4>
     </div>
   );
