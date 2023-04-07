@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 /* Custom fetch hook. 
 
@@ -7,47 +7,19 @@ import { useState } from "react";
 
 */
 
-const useFetch = async (url) => {
+const useFetch = (url) => {
   
   /* initial state */
-  const [response, setResponse] = useState([{
-    status: null,
-    isLoading: false,
-    error: { isError: false, msg: null },
-    data: [],
-}]);
+  const [data, setData] = useState(null) 
 
-  try {
-    const res = await fetch(url);
-    const data = await res.json();
-    if (res?.ok) {
-      return setResponse([{
-        status: res.status,
-        isLoading: false,
-        error: { isError: false, msg: null },
-        data: data,
-      }]);
-    } else {
-      return setResponse([{
-        ...response,
-        isLoading: false,
-        status: res.status,
-        error: {
-          isError: true,
-          msg: `Error: ${res.status}! Something went wrong`,
-        },
-      }]);
+  useEffect(() => {
+    const res = async (url) => {
+      const response = await fetch(url)
+      const data = await response.json()
+      setData(data)
     }
-  } catch (error) {
-   return setResponse([{
-      ...response,
-      isLoading: false,
-      status: error.status,
-      error: {
-        isError: true,
-        msg: error.msg,
-      },
-    }]);
-  }
-};
+    res()
+  }, [url])
+  
+}
 export default useFetch;
