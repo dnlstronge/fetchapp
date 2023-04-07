@@ -23,7 +23,7 @@ import { useState, useEffect } from "react";
       try {
         fetch(url)
         .then((res) => res.json())
-        .then((data) => setData({loading: false, error: null, data: data}));
+        .then((data) => setData({loading: false, error: null, data: data.message}));
         
       } catch (error) {
         setData({loading: false, error: true, data: [] })

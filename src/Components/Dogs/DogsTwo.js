@@ -6,9 +6,18 @@ import useFetch from "../../Hooks/useFetch";
 // url: "https://dog.ceo/api/breeds/image/random/3"
 
 const DogsTwo = () => {
-  const [data, setData] = useState();
-  const [response] = useFetch("https://dog.ceo/api/breeds/image/random/3") 
+  //const [data, setData] = useState();
+  const [data] = useFetch("https://dog.ceo/api/breeds/image/random/3") 
+  const [dogs, setDogs] = useState(false)
   
+
+useEffect(() => {
+    console.log(data)
+}, [data])
+
+const buttonHandler = () => {
+    setDogs(!dogs)
+}
 
 
  
@@ -22,9 +31,16 @@ const DogsTwo = () => {
           Upon button press It should return some dog images from the previously
           used free api.
         </p>
-        <Button text="Show me dogs"></Button>
-        <p>Loading...</p>
-        <section className={classes.section}></section>
+        <Button onClick={buttonHandler} text="Show me dogs"></Button>
+        {data.isloading && 
+        <p>Loading dogs...</p>}
+        {dogs && data.data.length > 0 &&
+        <section className={classes.sectionImages}>
+          {data.data.map((dog) => {
+            return <img className={classes.images} src={dog} alt="dog" />;
+          })}
+        </section>
+      }
       </h4>
     </div>
   );

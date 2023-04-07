@@ -18,6 +18,7 @@
 }
 .sectionImages {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     margin-left: 6rem;
     margin-right: 6rem;
