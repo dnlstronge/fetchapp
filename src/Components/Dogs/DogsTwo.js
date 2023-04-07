@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classes from "./DogsTwo.module.css";
 import Button from "../../UI/Button";
 import useFetch from "../../Hooks/useFetch";
@@ -9,11 +9,11 @@ const DogsTwo = () => {
   const [data, setData] = useState();
   const [response] = useFetch("https://dog.ceo/api/breeds/image/random/3") 
 
-//   const handleDogsII = async() => {
-//     // eslint-disable-next-line react-hooks/rules-of-hooks
-//     const fetchDogs = await useFetch("https://dog.ceo/api/breeds/image/random/3")
-//     console.log(fetchDogs)
-//   };
+
+
+    useEffect(() => {
+        console.log(response)
+    }, [response])
 
   return (
     <div className={classes.container}>
