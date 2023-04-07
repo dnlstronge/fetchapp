@@ -1,11 +1,9 @@
-import useErrorHandler from "./useErrorHandler";
+
 import React, { useState } from "react";
 
 /* Custom fetch hook. 
 
-3 pieces of state - errors and data + loading
-2 x objects error and data 1 boolean
-why not have just one object? 
+
 
 */
 
