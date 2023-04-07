@@ -1,0 +1,3 @@
+const useErrors = (res) => {
+
+}
