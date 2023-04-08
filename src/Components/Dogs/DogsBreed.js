@@ -20,23 +20,23 @@ const DogsBreed = () => {
   };
 
 const dogs = useFetch(
-    `https://dog.ceo/api/breed/${breedSelect}/images/random/3`
-  );
+    `https://dog.ceo/api/breed/${breedSelect}/images/random/3`);
 
   
 
   
   const handleFetch = () => {
     setShowBreed(!showBreed);
+    console.log(dogs)
   };
 
   return (
     <div className={classes.container}>
       <DogSelector selectDog={breedHandler} />
       <Button disabled={false} text="Show" onClick={handleFetch} />
-      <section className={classes.imagesSection}>
-        {showBreed && dogs.data.map((dog) => {
-          <img className={classes.images} src={dog} alt={breedSelect} />
+      <section className={classes.sectionImages}>
+        {showBreed && dogs[0].data.map((dog) =>  {
+           return <img key={dog} className={classes.images} src={dog} alt={breedSelect} />
         })}
       </section>
     </div>
