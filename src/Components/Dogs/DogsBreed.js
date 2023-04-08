@@ -35,7 +35,9 @@ const dogs = useFetch(
       <DogSelector selectDog={breedHandler} />
       <Button disabled={false} text="Show" onClick={handleFetch} />
       <section className={classes.imagesSection}>
-        {showBreed && dogs.data.map()}
+        {showBreed && dogs.data.map((dog) => {
+          <img className={classes.images} src={dog} alt={breedSelect} />
+        })}
       </section>
     </div>
   );
