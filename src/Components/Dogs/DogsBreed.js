@@ -9,7 +9,6 @@ import Button from "../../UI/Button";
 import useFetch from "../../Hooks/useFetch";
 
 const DogsBreed = () => {
-  
   const [breedSelect, setBreedSelect] = useState(null);
   const [showBreed, setShowBreed] = useState(false);
 
@@ -19,27 +18,35 @@ const DogsBreed = () => {
     setBreedSelect(breed);
   };
 
-const dogs = useFetch(
-    `https://dog.ceo/api/breed/${breedSelect}/images/random/3`);
+  const dogs = useFetch(
+    `https://dog.ceo/api/breed/${breedSelect}/images/random/3`
+  );
 
-  
-
-  
   const handleFetch = () => {
     setShowBreed(!showBreed);
-    console.log(dogs)
+    console.log(dogs);
   };
 
   return (
-    <div className={classes.container}>
-      <DogSelector selectDog={breedHandler} />
-      <Button disabled={false} text="Show" onClick={handleFetch} />
+    <>
+      <div className={classes.container}>
+        <DogSelector selectDog={breedHandler} />
+        <Button disabled={false} text="Show" onClick={handleFetch} />
+      </div>
       <section className={classes.sectionImages}>
-        {showBreed && dogs[0].data.map((dog) =>  {
-           return <img key={dog} className={classes.images} src={dog} alt={breedSelect} />
-        })}
+        {showBreed &&
+          dogs[0].data.map((dog) => {
+            return (
+              <img
+                key={dog}
+                className={classes.images}
+                src={dog}
+                alt={breedSelect}
+              />
+            );
+          })}
       </section>
-    </div>
+    </>
   );
 };
 
