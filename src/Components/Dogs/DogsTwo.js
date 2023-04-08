@@ -18,8 +18,8 @@ const DogsTwo = () => {
 
   return (
     <div className={classes.container}>
-      <h4 className={classes.heading}>
-        Dogs using custom hooks
+      <h4 className={classes.heading}>Dogs API II</h4>
+      <div className={classes.content}>
         <p className={classes.para}>
           I've built this section to try out a custom hook I created to handle
           simple fetch requests and errors. This time the data is fetched upon
@@ -30,7 +30,29 @@ const DogsTwo = () => {
           Upon button press It returns some dog images from the previously used
           free api and using a custom hook.
         </p>
+        <p className={classes.subPara}>
+            {`Url: `}
+            <a
+              target="blank"
+              className={classes.subAnchor}
+              href="https://jsonplaceholder.typicode.com/"
+            >
+              https://jsonplaceholder.typicode.com
+            </a>
+          </p>
+          <p className={classes.subPara}>
+            {`Code: `}
+            <a
+              target="blank"
+              className={classes.subAnchor}
+              href="https://github.com/dnlstronge/fetchapp/tree/master/src/Components/Users"
+            >
+              https://github.com/dnlstronge/fetchapp
+            </a>
+          </p>
+          
         <Button onClick={buttonHandler} text="Show me dogs"></Button>
+        </div>
         {data.loading && <p>Loading dogs...</p>}
         {dogs && data.data.length > 0 && (
           <section className={classes.sectionImages}>
@@ -39,7 +61,8 @@ const DogsTwo = () => {
             })}
           </section>
         )}
-      </h4>
+        
+      
     </div>
   );
 };

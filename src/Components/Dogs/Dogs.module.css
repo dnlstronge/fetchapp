@@ -1,7 +1,13 @@
-.section {
-    color: white;
+.container {
+    
     margin-left: 4rem;
     margin-right: 4rem;
+    margin-bottom: 40%;
+}
+
+
+.section {
+    color: white;
 }
 .heading {
     text-align: left;
@@ -18,10 +24,7 @@
     margin-right: 4rem;
 
 }
-.subPara {
-    margin-left: 2rem;
-    margin-right: 2rem;
-}
+
 
 .subAnchor {
     color:rgb(222, 169, 222)

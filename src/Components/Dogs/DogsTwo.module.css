@@ -4,10 +4,24 @@
     margin-right: 4rem;
     margin-bottom: 40%;
 }
+.section {
+    color: white;
+}
 .heading {
     color: white;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    text-align: left;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 70%;
+    color: white;
+    margin-left: 4rem;
+    margin-right: 4rem;
+
 }
 .para {
    margin-right: 2rem;
@@ -31,4 +45,12 @@
     border: 2px solid white;
     margin: 0.5rem;
 
+}
+.subPara {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.subAnchor {
+    color:rgb(222, 169, 222)
 }
