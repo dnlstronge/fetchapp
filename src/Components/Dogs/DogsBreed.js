@@ -9,6 +9,7 @@ import Button from "../../UI/Button";
 import useFetch from "../../Hooks/useFetch";
 
 const DogsBreed = () => {
+  
   const [breedSelect, setBreedSelect] = useState(null);
   const [showBreed, setShowBreed] = useState(false);
 
@@ -18,9 +19,13 @@ const DogsBreed = () => {
     setBreedSelect(breed);
   };
 
-  const data = useFetch(
+const dogs = useFetch(
     `https://dog.ceo/api/breed/${breedSelect}/images/random/3`
   );
+
+  
+
+  
   const handleFetch = () => {
     setShowBreed(!showBreed);
   };
@@ -29,6 +34,9 @@ const DogsBreed = () => {
     <div className={classes.container}>
       <DogSelector selectDog={breedHandler} />
       <Button disabled={false} text="Show" onClick={handleFetch} />
+      <section className={classes.imagesSection}>
+        {showBreed && dogs.data.map()}
+      </section>
     </div>
   );
 };
