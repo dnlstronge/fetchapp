@@ -1,3 +1,28 @@
+
+.section {
+    color: white;
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+.heading {
+    color: white;
+    text-align: left;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 70%;
+    color: white;
+    margin-left: 4rem;
+    margin-right: 4rem;
+
+}
+
+
 .dataContainer {
     display: flex;
     flex-basis: auto;
@@ -80,16 +105,9 @@
     font-size: 20px;
     color: white;
     margin-left: 40%;
-}
-.section {
-    color: white;
-    margin-left: 4rem;
-    margin-right: 4rem;
-}
-
+} 
 .subPara {
-    margin-left: 2rem;
-    margin-right: 2rem;
+
 }
 
 .subAnchor {

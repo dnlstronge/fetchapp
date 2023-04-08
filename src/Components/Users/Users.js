@@ -65,7 +65,8 @@ const Users = () => {
   return (
     <>
       <section className={classes.section}>
-        <h4 className={classes.subHeading}>
+        <h4 className={classes.heading}>JSON placeholder</h4>
+        <div className={classes.content}>
           <p className={classes.subPara}>
             This section uses the JSON placeholder api. It fetches some data
             (users) and displays different users inside a panel. A filter can
@@ -95,7 +96,7 @@ const Users = () => {
                  https://github.com/dnlstronge/fetchapp
             </a>
           </p>
-        </h4>
+          </div>
       </section>
       <button onClick={buttonHandler} className={classes.btn}>
         {toggleUsers ? "Hide Users" : "Show Users"}
