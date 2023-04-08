@@ -71,9 +71,9 @@ const Dogs = () => {
             <a
               target="blank"
               className={classes.subAnchor}
-              href="https://jsonplaceholder.typicode.com/"
+              href="https://dog.ceo/dog-api/"
             >
-              https://jsonplaceholder.typicode.com
+              https://dog.ceo/dog-api/
             </a>
           </p>
           <p className={classes.subPara}>
@@ -81,7 +81,7 @@ const Dogs = () => {
             <a
               target="blank"
               className={classes.subAnchor}
-              href="https://github.com/dnlstronge/fetchapp/tree/master/src/Components/Users"
+              href="https://github.com/dnlstronge/fetchapp/tree/master/src/Components/Dogs"
             >
               https://github.com/dnlstronge/fetchapp
             </a>

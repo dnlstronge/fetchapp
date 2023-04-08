@@ -45,7 +45,7 @@ const DogsTwo = () => {
             <a
               target="blank"
               className={classes.subAnchor}
-              href="https://github.com/dnlstronge/fetchapp/tree/master/src/Components/Users"
+              href="https://github.com/dnlstronge/fetchapp/tree/master/src/Components/Dogs"
             >
               https://github.com/dnlstronge/fetchapp
             </a>
