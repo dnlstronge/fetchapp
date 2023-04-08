@@ -3,12 +3,17 @@
 [x] - create a seperate UI component to handle the drop-down*/
 
 import React from "react";
-import classes from "./DogsBreed.module.css"
+import classes from "./DogsBreed.module.css";
+import DogSelector from "../../UI/DogSelector";
 
-
-
-const DogsBreed = () => {
-
+const breedHandler = (e) => {
+    console.log(e.target.value)
 }
 
-export default DogsBreed; 
+const DogsBreed = () => {
+  return <div className={classes.container}>
+        <DogSelector selectDog={breedHandler}/>
+  </div>;
+};
+
+export default DogsBreed;

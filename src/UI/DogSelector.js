@@ -19,7 +19,7 @@ const DogSelector = ({ selectDog }) => {
         <select onChange={selectDog} className={classes.label} id="dogselect">
           <option value="select">--select--</option>
           {breeds.map((breed) => {
-            return <select value={breed}>{breed}</select>;
+            return <option value={breed}>{breed}</option>;
           })}
         </select>
       </label>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import classes from "./Dogs.module.css";
 import Button from "../../UI/Button";
 import ErrorComp from "../../UI/Errors/ErrorComp";
-
+import DogsBreed from "./DogsBreed";
 import getFive from "../../Logic/getFive";
 
 /* For this fetch, I want the user to get rando pics of dogs on show me dogs.
@@ -31,10 +31,9 @@ const Dogs = () => {
         setError({ isError: false, status: null, msg: null });
         setDogData(data);
         console.log(data);
-        //console.log(dogData)
       } else {
         setdogs(false);
-        /* add useErrorHandler */
+
         setError({
           isError: true,
           status: response.status,
@@ -56,6 +55,7 @@ const Dogs = () => {
       <section className={classes.section}>
         <h4 className={classes.heading}>Dogs API</h4>
         <div className={classes.content}>
+          <DogsBreed />
           <p className={classes.subPara}>
             This section uses a free dog images API to get a list of random dog
             images, then apply a randomizer logic and map the fetched dogs on
@@ -86,8 +86,7 @@ const Dogs = () => {
               https://github.com/dnlstronge/fetchapp
             </a>
           </p>
-          </div>
-        
+        </div>
       </section>
       <section className={classes.btnsection}>
         <Button onClick={handleDogs} id="dogs" text="Show me Dogs" />
@@ -101,8 +100,6 @@ const Dogs = () => {
         </section>
       )}
       <ErrorComp status={error.status} msg={error.msg} />
-
-      {/* Insert link logic and paras */}
     </div>
   );
 };
