@@ -55,7 +55,7 @@ const Dogs = () => {
       <section className={classes.section}>
         <h4 className={classes.heading}>Dogs API</h4>
         <div className={classes.content}>
-          <DogsBreed />
+       
           <p className={classes.subPara}>
             This section uses a free dog images API to get a list of random dog
             images, then apply a randomizer logic and map the fetched dogs on
@@ -95,11 +95,23 @@ const Dogs = () => {
       {dogs && (
         <section className={classes.sectionImages}>
           {dogData.message.map((dog) => {
-            return <img className={classes.images} src={dog} alt="dog" />;
+            return <img key={dog} className={classes.images} src={dog} alt="dog" />;
           })}
         </section>
+        
       )}
-      <ErrorComp status={error.status} msg={error.msg} />
+      {error.isError && 
+      <ErrorComp status={error.status} msg={error.msg} />}
+      <section className={classes.content}>
+        <p>This next section allows the user to get an image of a dog by breed. 
+        The dropdown select is created from a mapped list of breed names.
+        The value returned from this is used in the get request executed when 
+        the user selects a breed then clicks the show button. 
+        <br></br>
+        <br></br>
+        The logic for the dropdown and selector is handled in separate compoenets</p>
+        <DogsBreed />
+      </section>
     </div>
   );
 };

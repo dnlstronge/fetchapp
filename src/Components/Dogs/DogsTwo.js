@@ -57,7 +57,7 @@ const DogsTwo = () => {
         {dogs && data.data.length > 0 && (
           <section className={classes.sectionImages}>
             {data.data.map((dog) => {
-              return <img className={classes.images} src={dog} alt="dog" />;
+              return <img key={dog} className={classes.images} src={dog} alt="dog" />;
             })}
           </section>
         )}
