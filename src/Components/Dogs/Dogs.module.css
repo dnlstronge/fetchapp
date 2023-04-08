@@ -4,7 +4,9 @@
     margin-right: 4rem;
 }
 .heading {
-    text-align: center;
+    text-align: left;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 .content {
     display: flex;
