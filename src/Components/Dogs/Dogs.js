@@ -54,7 +54,8 @@ const Dogs = () => {
   return (
     <div className={classes.container}>
       <section className={classes.section}>
-        <h4 className={classes.subHeading}>
+        <h4 className={classes.heading}>Dogs API</h4>
+        <div className={classes.content}>
           <p className={classes.subPara}>
             This section uses a free dog images API to get a list of random dog
             images, then apply a randomizer logic and map the fetched dogs on
@@ -85,7 +86,8 @@ const Dogs = () => {
               https://github.com/dnlstronge/fetchapp
             </a>
           </p>
-        </h4>
+          </div>
+        
       </section>
       <section className={classes.btnsection}>
         <Button onClick={handleDogs} id="dogs" text="Show me Dogs" />

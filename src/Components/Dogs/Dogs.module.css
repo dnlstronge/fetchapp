@@ -3,7 +3,19 @@
     margin-left: 4rem;
     margin-right: 4rem;
 }
+.heading {
+    text-align: center;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 70%;
+    color: white;
+    margin-left: 4rem;
+    margin-right: 4rem;
 
+}
 .subPara {
     margin-left: 2rem;
     margin-right: 2rem;
