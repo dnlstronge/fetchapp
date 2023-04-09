@@ -40,7 +40,7 @@ const useFetch = (url, valid) => {
         
     } catch (error) {
       setData({ loading: false, error: true, data: [] });
-    }} else {console.log("invalid url detected")}
+    }} else {setData({loading: false, error: true, data: "An invalid paramenter has been detected"})}
   }, [url, valid]);
   
   return [data]
