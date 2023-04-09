@@ -33,7 +33,7 @@ const DogsBreed = () => {
 
   const handleShowDogs = () => {
     setShowBreed(!showBreed);
-    console.log(dogs)
+   
   };
 
 
