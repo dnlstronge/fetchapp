@@ -18,11 +18,11 @@ const DogsBreed = () => {
   const validDog = approvedDogs;
 
   const breedHandler = (e) => {
-    console.log(e.target.value);
+    
     const breed = e.target.value.trim().toLowerCase().replace(/ /g, "");
     if(validDog.includes(breed)) {
       setValidURL(true)
-    }
+    } else {setValidURL(false)}
     setBreedSelect(breed);
     setButtonDisable(false)
   };
@@ -33,7 +33,7 @@ const DogsBreed = () => {
 
   const handleShowDogs = () => {
     setShowBreed(!showBreed);
-  
+    console.log(dogs)
   };
 
 
@@ -45,7 +45,7 @@ const DogsBreed = () => {
         <Button disabled={buttonDisable} text="Show" onClick={handleShowDogs} />
       </div>
       <section className={classes.sectionImages}>
-        {showBreed && dogs[0].error &&
+        {showBreed &&
           dogs[0].data.map((dog) => {
             return (
               <img
