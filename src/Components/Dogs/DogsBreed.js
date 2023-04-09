@@ -9,7 +9,7 @@ import Button from "../../UI/Button";
 import useFetch from "../../Hooks/useFetch";
 
 const DogsBreed = () => {
-  const [breedSelect, setBreedSelect] = useState(null);
+  const [breedSelect, setBreedSelect] = useState("cockapoo");
   const [showBreed, setShowBreed] = useState(false);
   const [buttonDisable, setButtonDisable] = useState(true)
 
