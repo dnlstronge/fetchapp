@@ -6,10 +6,15 @@ know before a get request will be sent whether it should work or not */
 
 
 const approvedDogs = [
-    
+    "akita",
+    "african",
+    "beagle",
+    "bluetick",
+    "boxer",
     "cockapoo",
     "coonhound",
-    "germanshepherd"
+    "germanshepherd",
+
 ]
 
 export default approvedDogs;

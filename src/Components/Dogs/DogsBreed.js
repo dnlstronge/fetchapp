@@ -45,6 +45,8 @@ const DogsBreed = () => {
         <Button disabled={buttonDisable} text="Show" onClick={handleShowDogs} />
       </div>
       <section className={classes.sectionImages}>
+      {dogs[0].loading &&
+      <p className={classes.loadP}>Loading...</p>}
         {showBreed &&
           dogs[0].data.map((dog) => {
             return (
