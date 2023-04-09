@@ -1,7 +1,8 @@
 const dogBreeds = [
-    "German shepherd",
+    
     "Cockapoo",
-    "Coon Hound"
+    "Coon Hound",
+    "German shepherd"
 ]
 
 export default dogBreeds;

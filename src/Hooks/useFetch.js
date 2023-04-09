@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 
 */
 
-const useFetch = (url) => {
+const useFetch = (url, valid) => {
   const [data, setData] = useState({
     loading: false,
     error: false,
@@ -15,7 +15,7 @@ const useFetch = (url) => {
 
   useEffect(() => {
     setData({ loading: true, error: null, data: [] });
-
+    
     try {
       
       fetch(url)
@@ -37,6 +37,7 @@ const useFetch = (url) => {
       setData({ loading: false, error: true, data: [] });
     }
   }, [url]);
+  console.log(data)
   return [data]
 };
 

@@ -7,33 +7,42 @@ import classes from "./DogsBreed.module.css";
 import DogSelector from "../../UI/DogSelector";
 import Button from "../../UI/Button";
 import useFetch from "../../Hooks/useFetch";
+import approvedDogs from "../../Data/AppovedDogs";
 
 const DogsBreed = () => {
   const [breedSelect, setBreedSelect] = useState("cockapoo");
   const [showBreed, setShowBreed] = useState(false);
   const [buttonDisable, setButtonDisable] = useState(true)
+  const [validURL, setValidURL] = useState(false)
+  
+  const validDog = approvedDogs;
 
   const breedHandler = (e) => {
     console.log(e.target.value);
     const breed = e.target.value.trim().toLowerCase().replace(/ /g, "");
+    if(validDog.includes(breed)) {
+      setValidURL(true)
+    }
     setBreedSelect(breed);
     setButtonDisable(false)
   };
 
   const dogs = useFetch(
     `https://dog.ceo/api/breed/${breedSelect}/images/random/4`
-  );
+  , validURL);
 
-  const handleFetch = () => {
+  const handleShowDogs = () => {
     setShowBreed(!showBreed);
-    console.log(dogs);
+  
   };
+
+
 
   return (
     <>
       <div className={classes.container}>
         <DogSelector selectDog={breedHandler} />
-        <Button disabled={buttonDisable} text="Show" onClick={handleFetch} />
+        <Button disabled={buttonDisable} text="Show" onClick={handleShowDogs} />
       </div>
       <section className={classes.sectionImages}>
         {showBreed && dogs[0].error &&
