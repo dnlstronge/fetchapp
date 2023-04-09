@@ -11,6 +11,7 @@ import useFetch from "../../Hooks/useFetch";
 const DogsBreed = () => {
   const [breedSelect, setBreedSelect] = useState(null);
   const [showBreed, setShowBreed] = useState(false);
+  const [buttonDisable, setButtonDisable] = useState(true)
 
   const breedHandler = (e) => {
     console.log(e.target.value);
