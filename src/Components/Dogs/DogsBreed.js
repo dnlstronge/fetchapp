@@ -28,10 +28,12 @@ const DogsBreed = () => {
   };
 
   const dogs = useFetch(
-    `https://dog.ceo/api/breed/${breedSelect}/images/random/4`
+    `https://dog.ceo/api/breed/${breedSelect}/images/random/3`
   , validURL);
 
   const handleShowDogs = () => {
+    const element = document.getElementById("section");
+    element.scrollIntoView({ behavior: "smooth", block: "end" })
     setShowBreed(!showBreed);
    
   };
@@ -41,9 +43,6 @@ const DogsBreed = () => {
   return (
     <>
       <div className={classes.container}>
-        <DogSelector selectDog={breedHandler} />
-        <Button disabled={buttonDisable} text="Show" onClick={handleShowDogs} />
-      </div>
       <section className={classes.sectionImages}>
       {dogs[0].loading &&
       <p className={classes.loadP}>Loading...</p>}
@@ -59,6 +58,11 @@ const DogsBreed = () => {
             );
           })}
       </section>
+        <DogSelector selectDog={breedHandler} />
+        <Button disabled={buttonDisable} text="Show" onClick={handleShowDogs} />
+      </div>
+    
+      <div id="section"></div>
     </>
   );
 };

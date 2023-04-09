@@ -11,9 +11,17 @@ const approvedDogs = [
     "beagle",
     "bluetick",
     "boxer",
+    "brabancon",
+    "briard",
     "cockapoo",
     "coonhound",
+    "chow",
+    "clumber",
+    "dalmatian",
+    "dhole",
     "germanshepherd",
+    
+
 
 ]
 

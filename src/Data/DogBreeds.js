@@ -4,9 +4,16 @@ const dogBreeds = [
     "Beagle",
     "Bluetick",
     "Boxer",
+    "Brabancon",
+    "Briard",
     "Cockapoo",
     "Coon Hound",
-    "German shepherd"
+    "Chow",
+    "Clumber",
+    "Dalmatian",
+    "Dhole",
+    "German shepherd",
+    
 ]
 
 export default dogBreeds;

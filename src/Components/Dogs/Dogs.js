@@ -106,14 +106,16 @@ const Dogs = () => {
         <p>This next section allows the user to get a few images of a dogs by breed. 
         The dropdown select is created from a mapped list of breed names.
         The value returned from this is used in the get request executed when 
-        the user selects a breed then clicks the show button. Dog breed selected from 
+        the user selects a breed then clicks the show button. 
+        <br></br>
+        <DogsBreed />
+        <br></br>
+        Dog breed selected from 
         the drop down is also validated against an internal list, as a result a get 
         request shouldn't fire if it will return 404, 
         There is also 404 handling built into the fetch hook. 
-        <br></br>
-        <br></br>
         The logic for the dropdown and selector is handled in separate components</p>
-        <DogsBreed />
+        
       </section>
     </div>
   );
