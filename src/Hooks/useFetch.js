@@ -2,6 +2,17 @@ import { useState, useEffect } from "react";
 
 /* Custom fetch hook. 
 
+config: 
+
+two params: url (selfexplanatory) + valid (boolean) - if true will execute fetch
+
+
+returns: 
+
+      { loading: boolean,
+          error: boolean,
+          data: []
+      }
 
 
 */
