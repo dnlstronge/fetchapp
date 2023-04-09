@@ -18,7 +18,7 @@ const DogSelector = ({ selectDog }) => {
   }
   return (
     <div className={classes.container}>
-      <label id="label" htmlFor="dogselect" className={classes.label}>
+      <label id="label" htmlFor="dogselect" className={classes.label}>Please select a breed:  
         <select onClick={handleFocus} onChange={selectDog} className={classes.label} id="dogselect">
           <option value="select">--select--</option>
           {breeds.map((breed) => {
