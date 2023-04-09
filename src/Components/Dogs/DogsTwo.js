@@ -7,7 +7,7 @@ import useFetch from "../../Hooks/useFetch";
 
 const DogsTwo = () => {
   //const [data, setData] = useState();
-  const [data] = useFetch("https://dog.ceo/api/breeds/image/random/3");
+  const [data] = useFetch("https://dog.ceo/api/breeds/image/random/3", true);
   const [dogs, setDogs] = useState(false);
 
   
