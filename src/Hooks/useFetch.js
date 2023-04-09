@@ -9,35 +9,35 @@ import { useState, useEffect } from "react";
 const useFetch = (url) => {
   const [data, setData] = useState({
     loading: false,
-    Error: null,
+    error: false,
     data: [],
   });
 
   useEffect(() => {
     setData({ loading: true, error: null, data: [] });
+
     try {
-      let response = null;
+      
       fetch(url)
-        .then((res) => {
-          if (res?.ok) {
-            res.json();
-          } else {
-            setData({
-              loading: false,
-              error: true,
-              data: [],
-            });
-          }
-        })
-        .then((data) =>
-          setData({ loading: false, error: null, data: data.message })
-        );
+      .then((res) => {
+        if(res.ok === true) {
+          res.json().then((data) => {
+            setData(data)
+          })
+        /* catch error outside of api scope */
+        } else {
+          setData({loading: false, error: true, data: []})
+        }
+        
+      })
+    
+      /*catch error inside of api scope */
+        
     } catch (error) {
       setData({ loading: false, error: true, data: [] });
     }
   }, [url]);
-
-  return [data];
+  return [data]
 };
 
 export default useFetch;

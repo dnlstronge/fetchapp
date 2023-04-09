@@ -36,7 +36,7 @@ const DogsBreed = () => {
         <Button disabled={buttonDisable} text="Show" onClick={handleFetch} />
       </div>
       <section className={classes.sectionImages}>
-        {showBreed &&
+        {showBreed && dogs[0].error &&
           dogs[0].data.map((dog) => {
             return (
               <img
