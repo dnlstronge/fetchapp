@@ -17,6 +17,7 @@ const DogsBreed = () => {
     console.log(e.target.value);
     const breed = e.target.value.trim().toLowerCase().replace(/ /g, "");
     setBreedSelect(breed);
+    setButtonDisable(false)
   };
 
   const dogs = useFetch(
@@ -32,7 +33,7 @@ const DogsBreed = () => {
     <>
       <div className={classes.container}>
         <DogSelector selectDog={breedHandler} />
-        <Button disabled={false} text="Show" onClick={handleFetch} />
+        <Button disabled={buttonDisable} text="Show" onClick={handleFetch} />
       </div>
       <section className={classes.sectionImages}>
         {showBreed &&
