@@ -5,7 +5,6 @@ const Search = {
     englishbulldog: "bulldog/english",
     bulldog: "bulldog/english",
     frenchpoodle: "poodle/french",
-    
     bordercollie: "collie/border",
     boxer: "boxer",
     beagle: "beagle",
@@ -22,6 +21,10 @@ const Search = {
     irishwolfhound: "wolfhound/irish",
     wolfhound: "wolfhound/irish",
     mastiff: "mastiff",
+    labrador: 'labrador',
+    labradorretriever: "labrador",
+    retriever: "retriever/golden",
+    goldenretriever: "retriever/golden",
     shihtzu: "shihtzu",
     westie: "terrier/westhighland",
     westhighland: "terrier/westhighland",
