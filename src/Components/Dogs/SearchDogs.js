@@ -48,9 +48,17 @@ const SearchDogs = () => {
         <Button onClick={handleSearch} text="Search" />
       </label>
       <section className={classes.sectionImages}>
-        {showDogs && data[0].data.map(dog => {
-            return <img key={dog} className={classes.images} src={dog} alt={searchTerm}/>
-        })}
+        {showDogs &&
+          data[0].data.map((dog) => {
+            return (
+              <img
+                key={dog}
+                className={classes.images}
+                src={dog}
+                alt={searchTerm}
+              />
+            );
+          })}
       </section>
     </div>
   );
