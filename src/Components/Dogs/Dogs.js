@@ -11,7 +11,7 @@ gonna use: https://dog.ceo/dog-api/  */
 
 /* first get an array of rando dogs (/number) */
 
-const dogURL = "https://dog.ceo/api/breeds/image/random/3";
+const dogURL = "https://dog.ceo/api/breeds/image/random/4";
 
 
 const Dogs = () => {

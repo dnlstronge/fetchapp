@@ -31,7 +31,7 @@ const Search = {
     englishspringer: "springer/english",
     englishspringerspaniel: 'springer/english',
     /* F */
-    frenchpoodle: "poodle/french",
+    frenchpoodle: "poodle/standard",
     
     /* G */
     golden: "retriever/golden",
@@ -40,6 +40,8 @@ const Search = {
     greatdane: "dane/great",
     /* H */
     /* I */
+    irishsetter: "setter/irish",
+    setter: "setter",
     irishwolfhound: "wolfhound/irish",
     /* J */
     /* K */
@@ -53,13 +55,16 @@ const Search = {
     /* N */
     /* O */
     /* P */
+    pug: "pug",
     poodle: "poodle",
 
     /* Q */
     /* R */
+    redsetter: "setter/irish",
     retriever: "retriever/golden",
     rottweiler: "rottweiler",
     /* S */
+    saluki: "saluki",
     saintbernard: "stbernard",
     stbernard: "stbernard",
     spaniel: "spaniel",
