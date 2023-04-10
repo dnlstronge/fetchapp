@@ -8,6 +8,7 @@ const dogs = Search;
 
 const SearchDogs = () => {
   const [showDogs, setShowDogs] = useState(false);
+  const [noDogs, setNoDogs] = useState(false)
   const [isValid, setisValid] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const data = useFetch(
@@ -19,9 +20,12 @@ const SearchDogs = () => {
     const element = document.getElementById("focus");
     element.scrollIntoView({ behavior: "smooth" })
     if (isValid) {
+      setNoDogs(false)
       setShowDogs(true);
     } else {
+      setNoDogs(true)
       setShowDogs(false);
+      
     }
   };
   const handleSearchTerm = (e) => {
@@ -55,6 +59,8 @@ const SearchDogs = () => {
         ></input>
         <Button onClick={handleSearch} text="Search" />
       </label>
+      {noDogs && 
+      <p className={classes.nodogs}>No results found</p>}
       <section id="focus" className={classes.sectionImages}>
         {showDogs &&
           data[0].data.map((dog) => {

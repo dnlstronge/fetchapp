@@ -11,8 +11,8 @@
 }
 .heading {
     text-align: left;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 4rem;
+    margin-right: 4rem;
 }
 .content {
     display: flex;

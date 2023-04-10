@@ -15,6 +15,8 @@ const Search = {
     bulldog: "bulldog/english",
     /* C */
     cockapoo: "cockapoo",
+    cockerspaniel: "spaniel/cocker",
+    cocker: "spaniel/cocker",
     collie: "collie",
     /* D */
 
@@ -26,6 +28,8 @@ const Search = {
     /* E */
     englishmastiff: "mastiff/english",
     englishbulldog: "bulldog/english",
+    englishspringer: "springer/english",
+    englishspringerspaniel: 'springer/english',
     /* F */
     frenchpoodle: "poodle/french",
     
@@ -44,14 +48,23 @@ const Search = {
     labradorretriever: "labrador",
     /* M */
     mastiff: "mastiff",
-    
+    malamute: "malamute",
+    malinois: "malinois",
     /* N */
     /* O */
     /* P */
+    poodle: "poodle",
+
     /* Q */
     /* R */
     retriever: "retriever/golden",
+    rottweiler: "rottweiler",
     /* S */
+    saintbernard: "stbernard",
+    stbernard: "stbernard",
+    spaniel: "spaniel",
+    springerspaniel: "springer/english",
+    springer: "springer/english",
     shihtzu: "shihtzu",
     /* T */
     /* U */

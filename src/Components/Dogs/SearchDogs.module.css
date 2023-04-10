@@ -40,3 +40,7 @@ border-radius: 6px;
     border: 2px solid white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+.nodogs {
+    color: white;
+    margin-left: 4rem;
+}
