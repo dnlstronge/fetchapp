@@ -16,6 +16,8 @@ const SearchDogs = () => {
   );
 
   const handleSearch = () => {
+    const element = document.getElementById("focus");
+    element.scrollIntoView({ behavior: "smooth" })
     if (isValid) {
       setShowDogs(true);
     } else {
@@ -43,7 +45,6 @@ const SearchDogs = () => {
         in this section I've added a search bar which decides if the user input is valid by cross referencing
         an internal list, it then provides parameters for a custom fetch hook. It returns pictures of dogs 
         by breed entered and searched for.</p>
-        <br></br>
         <p className={classes.para}>If the search term is valid, a fetch hook returns data. If an invalid search parameter is entered get will not be sent although the fetch hook 
         will handle a 404 also.</p>
       <label className={classes.label} htmlFor="searchbar">
@@ -54,7 +55,7 @@ const SearchDogs = () => {
         ></input>
         <Button onClick={handleSearch} text="Search" />
       </label>
-      <section className={classes.sectionImages}>
+      <section id="focus" className={classes.sectionImages}>
         {showDogs &&
           data[0].data.map((dog) => {
             return (

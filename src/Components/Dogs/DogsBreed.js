@@ -32,7 +32,7 @@ const DogsBreed = () => {
   , validURL);
 
   const handleShowDogs = () => {
-    const element = document.getElementById("section");
+    const element = document.getElementById("selector");
     element.scrollIntoView({ behavior: "smooth", block: "end" })
     setShowBreed(!showBreed);
    
@@ -43,7 +43,7 @@ const DogsBreed = () => {
   return (
     <>
       <div className={classes.container}>
-      <section className={classes.sectionImages}>
+      <section id="selector" className={classes.sectionImages}>
       {dogs[0].loading &&
       <p className={classes.loadP}>Loading...</p>}
         {showBreed &&
