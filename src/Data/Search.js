@@ -2,7 +2,8 @@
 
 
 const Search = {
-    englishbulldog: "bulldog-english"
+    englishbulldog: "bulldog/english",
+    cockapoo: "cockapoo"
 }
     
 
