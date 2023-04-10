@@ -33,7 +33,7 @@ const DogsBreed = () => {
 
   const handleShowDogs = () => {
     const element = document.getElementById("selector");
-    element.scrollIntoView({ behavior: "smooth", block: "end" })
+    element.scrollIntoView({ behavior: "smooth", })
     setShowBreed(!showBreed);
    
   };
