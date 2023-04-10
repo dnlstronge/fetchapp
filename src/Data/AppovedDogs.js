@@ -6,11 +6,13 @@ know before a get request will be sent whether it should work or not */
 
 
 const approvedDogs = [
+    "affenpinscher",
     "akita",
     "african",
     "beagle",
     "bluetick",
     "boxer",
+    "bouvier",
     "brabancon",
     "briard",
     "cockapoo",
@@ -19,7 +21,11 @@ const approvedDogs = [
     "clumber",
     "dalmatian",
     "dhole",
+    "dingo",
+    "doberman",
+    "eskimo",
     "germanshepherd",
+    
     
 
 
