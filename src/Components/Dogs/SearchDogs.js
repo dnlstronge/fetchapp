@@ -26,11 +26,11 @@ const SearchDogs = () => {
     let validate = e.target.value.trim().toLowerCase().replace(/ /g, "");
     let validated = dogs[validate];
     if (validated) {
-      console.log(validated);
+      //console.log(validated);
       setisValid(true);
       setSearchTerm(validated);
     } else {
-      console.log("No entries found");
+      //console.log("No entries found");
       setisValid(false);
       setSearchTerm("");
       setShowDogs(false);
@@ -39,6 +39,13 @@ const SearchDogs = () => {
 
   return (
     <div className={classes.container}>
+        <p className={classes.para}>Developing upon the previous search based on a drop down, 
+        in this section I've added a search bar which decides if the user input is valid by cross referencing
+        an internal list, it then provides parameters for a custom fetch hook. It returns pictures of dogs 
+        by breed entered and searched for</p>
+        <br></br>
+        If the search term is valid, a fetch hook returns data. If an invalid search parameter is entered get will not be sent although the fetch hook 
+        will handle a 404 also.
       <label className={classes.label} htmlFor="searchbar">
         <input
           type="text"
