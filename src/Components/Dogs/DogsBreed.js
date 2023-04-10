@@ -12,57 +12,53 @@ import approvedDogs from "../../Data/AppovedDogs";
 const DogsBreed = () => {
   const [breedSelect, setBreedSelect] = useState("cockapoo");
   const [showBreed, setShowBreed] = useState(false);
-  const [buttonDisable, setButtonDisable] = useState(true)
-  const [validURL, setValidURL] = useState(false)
-  
+  const [buttonDisable, setButtonDisable] = useState(true);
+  const [validURL, setValidURL] = useState(false);
+
   const validDog = approvedDogs;
 
   const breedHandler = (e) => {
-    
     const breed = e.target.value.trim().toLowerCase().replace(/ /g, "");
-    if(validDog.includes(breed)) {
-      setValidURL(true)
-    } else {setValidURL(false)}
+    if (validDog.includes(breed)) {
+      setValidURL(true);
+    } else {
+      setValidURL(false);
+    }
     setBreedSelect(breed);
-    setButtonDisable(false)
+    setButtonDisable(false);
   };
 
   const dogs = useFetch(
-    `https://dog.ceo/api/breed/${breedSelect}/images/random/3`
-  , validURL);
+    `https://dog.ceo/api/breed/${breedSelect}/images/random/3`,
+    validURL
+  );
 
   const handleShowDogs = () => {
     const element = document.getElementById("selector");
-    element.scrollIntoView({ behavior: "smooth", })
+    element.scrollIntoView({ behavior: "smooth" });
     setShowBreed(!showBreed);
-   
   };
-
-
 
   return (
     <>
       <div className={classes.container}>
-      <section id="selector" className={classes.sectionImages}>
-      {dogs[0].loading &&
-      <p className={classes.loadP}>Loading...</p>}
-        {showBreed &&
-          dogs[0].data.map((dog) => {
-            return (
-              <img
-                key={dog}
-                className={classes.images}
-                src={dog}
-                alt={breedSelect}
-              />
-            );
-          })}
-      </section>
+        <section id="selector" className={classes.sectionImages}>
+          {dogs[0].loading && <p className={classes.loadP}>Loading...</p>}
+          {showBreed &&
+            dogs[0].data.map((dog) => {
+              return (
+                <img
+                  key={dog}
+                  className={classes.images}
+                  src={dog}
+                  alt={breedSelect}
+                />
+              );
+            })}
+        </section>
         <DogSelector selectDog={breedHandler} />
         <Button disabled={buttonDisable} text="Show" onClick={handleShowDogs} />
       </div>
-    
-    
     </>
   );
 };

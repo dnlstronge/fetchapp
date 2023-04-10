@@ -30,7 +30,7 @@ const Dogs = () => {
         setdogs(true);
         setError({ isError: false, status: null, msg: null });
         setDogData(data);
-        console.log(data);
+        //console.log(data);
       } else {
         setdogs(false);
 

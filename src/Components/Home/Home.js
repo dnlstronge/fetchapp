@@ -13,9 +13,8 @@ const Home = () => {
                 freely implement code and manipulate different data sets form sources online and also 
                 have a bit of fun with it.
                 <br></br><br></br>
-                While I have gotten comfortable with a fair few aspects of react, I felt that 
-                I hadn't haven't done enough work with APIs in general, so this app really serves as an environment
-                in which to further develop my skills and a place to showcase what I have learned.</p>
+               I wanted to gain more experience working with APIs in general and this app serves as an environment
+               in which to develop my skills as well as a place to showcase what I have learned.</p>
             </section>
         </div>
     )

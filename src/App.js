@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+
 import React, { useState, useEffect } from "react";
 import classes from "./App.module.css";
 import Users from "./Components/Users/Users";

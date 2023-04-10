@@ -30,6 +30,7 @@ const Search = {
     englishbulldog: "bulldog/english",
     englishspringer: "springer/english",
     englishspringerspaniel: 'springer/english',
+    englishsheepdog: "sheepdog/english",
     /* F */
     frenchpoodle: "poodle/standard",
     
@@ -43,6 +44,7 @@ const Search = {
     irishsetter: "setter/irish",
     setter: "setter",
     irishwolfhound: "wolfhound/irish",
+    irishspaniel: "spaniel/irish",
     /* J */
     /* K */
     /* L */
@@ -71,6 +73,8 @@ const Search = {
     springerspaniel: "springer/english",
     springer: "springer/english",
     shihtzu: "shihtzu",
+    sheepdog: "sheepdog",
+    shiba: "shiba",
     /* T */
     /* U */
     /* V */
@@ -81,6 +85,8 @@ const Search = {
     westhighlandterrier: "terrier/westhighland",
     /* X */
     /* Y */
+    yorkshireterrier: "terrier/yorkshire",
+    yorkie: "terrier/yorkshire",
     /* Z */
     
   
