@@ -7,15 +7,18 @@ const SearchDogs = () => {
     const [isValid, setisValid] = useState(false)
     const [searchTerm, setSearchTerm] = useState("")
     const data = useFetch(`https://dog.ceo/api/breed/${breedSelect}/images/random/3`, isValid)
-    const handleSearch = (e) => {
+    const handleSearch = () => {
 
+    }
+    const handleSearchTerm = (e) => {
+        
     }
 
     return (
 
         <div className={classes.container}>
             <label className={classes.label} htmlFor="searchbar"> 
-                <input className={classes.input}></input>
+                <input onChange={handleSearchTerm} className={classes.input}></input>
                 <Button onClick={handleSearch}text="Search" />
             </label>
     
