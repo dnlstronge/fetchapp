@@ -62,7 +62,7 @@ const DogsBreed = () => {
         <Button disabled={buttonDisable} text="Show" onClick={handleShowDogs} />
       </div>
     
-      <div id="section"></div>
+    
     </>
   );
 };

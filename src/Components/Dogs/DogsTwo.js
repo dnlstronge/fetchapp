@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import classes from "./DogsTwo.module.css";
 import Button from "../../UI/Button";
 import useFetch from "../../Hooks/useFetch";
+import SearchDogs from "./SearchDogs";
 
 // url: "https://dog.ceo/api/breeds/image/random/3"
 
@@ -62,7 +63,7 @@ const DogsTwo = () => {
           </section>
         )}
         
-      
+      <SearchDogs />
     </div>
   );
 };
