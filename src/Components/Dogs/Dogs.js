@@ -55,7 +55,6 @@ const Dogs = () => {
       <section className={classes.section}>
         <h4 className={classes.heading}>Dogs API</h4>
         <div className={classes.content}>
-       
           <p className={classes.subPara}>
             This section uses a free dog images API to get a list of random dog
             images, then apply a randomizer logic and map the fetched dogs on
@@ -95,28 +94,29 @@ const Dogs = () => {
       {dogs && (
         <section className={classes.sectionImages}>
           {dogData.message.map((dog) => {
-            return <img key={dog} className={classes.images} src={dog} alt="dog" />;
+            return (
+              <img key={dog} className={classes.images} src={dog} alt="dog" />
+            );
           })}
         </section>
-        
       )}
-      {error.isError && 
-      <ErrorComp status={error.status} msg={error.msg} />}
+      {error.isError && <ErrorComp status={error.status} msg={error.msg} />}
       <section className={classes.content}>
-        <p>This next section allows the user to get a few images of a dogs by breed. 
-        The dropdown select is created from a mapped list of breed names.
-        The value returned from this is used in the get request executed when 
-        the user selects a breed then clicks the show button. </p>.
+        <p>
+          This next section allows the user to get a few images of a dogs by
+          breed. The dropdown select is created from a mapped list of breed
+          names. The value returned from this is used in the get request
+          executed when the user selects a breed then clicks the show button.{" "}
+        </p>
         <br></br>
         <DogsBreed />
         <br></br>
         <p>
-        Dog breed selected from 
-        the drop down is also validated against an internal list, as a result a get 
-        request shouldn't fire if it will return 404, 
-        There is also 404 handling built into the fetch hook. 
-        The logic for the dropdown and selector is handled in separate components</p>
-        
+          Dog breed selected from the drop down is also validated against an
+          internal list, as a result a get request shouldn't fire if it will
+          return 404, There is also 404 handling built into the fetch hook. The
+          logic for the dropdown and selector is handled in separate components
+        </p>
       </section>
     </div>
   );
