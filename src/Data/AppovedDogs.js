@@ -25,6 +25,8 @@ const approvedDogs = [
     "doberman",
     "eskimo",
     "germanshepherd",
+    "husky",
+    "pomeranian"
     
     
 

@@ -18,6 +18,8 @@ const dogBreeds = [
     "Doberman",
     "Eskimo",
     "German shepherd",
+    "Husky",
+    "Pomeranian"
     
     
 ]
