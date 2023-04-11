@@ -1,6 +1,17 @@
 import React, { useState } from "react";
 import classes from "./SearchBar.module.csss"
 
+/*config: 
+
+  (props)
+
+onClick: lift state up as search term
+
+  (local)
+  
+SearchTerm: local state determined by user input
+*/
+
 const SearchBar = ({onClick}) => {
     const [searchTerm, setSearchTerm] = useState("")
 
