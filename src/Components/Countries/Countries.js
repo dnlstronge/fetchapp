@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import classes from "./Countries.module.css";
 import SearchBar from "../../UI/Searchbar";
-
+import Card from "./Card";
 
 /* new component to try out manipulating data from a different api */
 /* Build custom searchbar component and import */
@@ -14,8 +14,8 @@ const Countries = () => {
   const [showData, setShowData] = useState(false);
   const [error, setError] = useState({
     isError: true,
-    msg: null
-  })
+    msg: null,
+  });
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -25,18 +25,18 @@ const Countries = () => {
           .then((res) => res.json())
           .then((items) => {
             setData(items);
-            console.log(items)
+            console.log(items);
           });
-          console.log("Data request successfull")
-          setError({isError: false, msg: null})
-          setShowData(true)
+        console.log("Data request successfull");
+        setError({ isError: false, msg: null });
+        setShowData(true);
       } catch (error) {
-        setError({isError: true, msg: error.msg})
-        setShowData(false)
+        setError({ isError: true, msg: error.msg });
+        setShowData(false);
         //console.log(error.message);
       }
     } else {
-        setError({isError: true, msg: "Please enter a valid country"})
+      setError({ isError: true, msg: "Please enter a valid country" });
     }
   }, [search, isValid]);
 
@@ -48,10 +48,17 @@ const Countries = () => {
         particular country and display data
       </p>
       <SearchBar isValid={setIsValid} onClick={setSearch} />
-      {Error.isError && 
-      <p>Ooops... {error.msg}</p>}
-      {showData &&
-      <p>TEST PARA</p>}
+      {Error.isError && <p>Ooops... {error.msg}</p>}
+      {showData && <p>TEST PARAGRAPH</p>}
+
+      {showData && data && (
+        <Card
+          head={data[0].name.common}
+          COA={data[0].coatOfArms.png}
+          offName={data[0].name.official}
+          flag={data[0].flags.png}
+        />
+      )}
     </div>
   );
 };

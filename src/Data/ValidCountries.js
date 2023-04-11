@@ -1,6 +1,8 @@
 const ValidCountries = {
     ireland: "ireland",
-    spain: "spain"
+    spain: "spain",
+    italy: "italy",
+    germany: "germany",
 }
 
 export default ValidCountries;
