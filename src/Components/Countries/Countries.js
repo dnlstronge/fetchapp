@@ -1,12 +1,12 @@
 import React from "react"
-import classes from "./Next.module.css"
+import classes from "./Countries.module.css"
 
 /* new component to try out manipulating data from a different api */
 
 
 
 
-const Next = () => {
+const Countries = () => {
     return (
         <div className={classes.container}>
             <h4>Countries API</h4>
@@ -17,4 +17,4 @@ const Next = () => {
 }
 
 
-export default Next;
+export default Countries;

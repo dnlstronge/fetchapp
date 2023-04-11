@@ -53,6 +53,9 @@ const handleDogsII = () => {
         <Dogs />}
       {showPage.dogsAPIII && 
         <DogsTwo />}
+        {showPage.countries &&
+        <Countries />
+        }
     </div>
   );
 };
