@@ -27,7 +27,7 @@ const Countries = () => {
             setData(items);
             console.log(items);
           });
-        console.log("Data request successfull");
+
         setError({ isError: false, msg: null });
         setShowData(true);
       } catch (error) {
@@ -49,7 +49,6 @@ const Countries = () => {
       </p>
       <SearchBar isValid={setIsValid} onClick={setSearch} />
       {Error.isError && <p>Ooops... {error.msg}</p>}
-  
 
       {showData && data && (
         <Card
@@ -63,7 +62,7 @@ const Countries = () => {
           carside={data[0].car.side}
           landlocked={data[0].landlocked}
           population={data[0].population}
-        //   currency={`${data[0].currencies[0].name}`}
+          //   currency={`${data[0].currencies[0].name}`}
         />
       )}
     </div>
