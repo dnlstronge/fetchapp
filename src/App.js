@@ -18,21 +18,25 @@ const App = () => {
     home: true,
     userAPI: false,
     dogsAPI: false,
-    laterAPIII: false
+    laterAPIII: false,
+    countries: false
   })
 
 
 const handleHome = () => {
-  setShowPage({home: true, userAPI: false, dogsAPI: false, dogsAPIII: false})
+  setShowPage({home: true, userAPI: false, dogsAPI: false, dogsAPIII: false, countries: true})
 }
 const handleUser = () => {
-  setShowPage({home: false, userAPI: true, dogsAPI: false, dogsAPIII: false})
+  setShowPage({home: false, userAPI: true, dogsAPI: false, dogsAPIII: false, countries: true})
 }
 const handleDogs = () => {
-  setShowPage({home: false, userAPI: false, dogsAPI: true, dogsAPIII: false})
+  setShowPage({home: false, userAPI: false, dogsAPI: true, dogsAPIII: false, countries: true})
 }
 const handleDogsII = () => {
-  setShowPage({home: false, userAPI: false, dogsAPI: false, dogsAPIII: true})
+  setShowPage({home: false, userAPI: false, dogsAPI: false, dogsAPIII: true, countries: true})
+}
+const handleCountries = () => {
+  setShowPage({home: false, userAPI: false, dogsAPI: false, dogsAPIII: false, countries: true})
 }
 
   return (
@@ -45,6 +49,7 @@ const handleDogsII = () => {
         <Button onClick={handleUser} id="userAPI" text="User API" />
         <Button onClick={handleDogs} id="Dogs API" text="Dogs API" />
         <Button onClick={handleDogsII} id="Dogs API II" text="Dogs API II" />
+        <Button onClick={handleCountries} id="countries" text="Countries API" />
       </div>
       {showPage.home &&
       <Home></Home> }
