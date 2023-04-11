@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import classes from "./SearchBar.module.css"
+import classes from "./SearchBar.module.css";
 
 /*config: 
 
@@ -12,16 +12,22 @@ onClick: lift state up as search term
 SearchTerm: local state determined by user input
 */
 
-const SearchBar = ({onClick}) => {
-    const [searchTerm, setSearchTerm] = useState("")
+const SearchBar = ({ onClick }) => {
+  const [searchTerm, setSearchTerm] = useState("");
 
-    return (
-        <div className={classes.container}>
-            <label className={classes.label} htmlFor="search"></label>
-            <input type="text" className={classes.input} id="search"></input>
-            <button className={classes.btn} onClick={onClick}>Search</button>
-        </div>
-    )
-}
+
+  const handleInput = (e) => {
+
+  }
+  return (
+    <div className={classes.container}>
+      <label className={classes.label} htmlFor="search"></label>
+      <input onChange={handleInput} type="text" className={classes.input} id="search"></input>
+      <button className={classes.btn} onClick={onClick}>
+        Search
+      </button>
+    </div>
+  );
+};
 
 export default SearchBar;
