@@ -8,7 +8,11 @@ import classes from "./Next.module.css"
 
 const Next = () => {
     return (
-        <div className={classes.container}></div>
+        <div className={classes.container}>
+            <h4>Countries API</h4>
+            <p>This section uses the countries api, it allows users to search
+            for a particular country and display data</p>
+        </div>
     )
 }
 
