@@ -24,16 +24,16 @@ const App = () => {
 
 
 const handleHome = () => {
-  setShowPage({home: true, userAPI: false, dogsAPI: false, dogsAPIII: false, countries: true})
+  setShowPage({home: true, userAPI: false, dogsAPI: false, dogsAPIII: false, countries: false})
 }
 const handleUser = () => {
-  setShowPage({home: false, userAPI: true, dogsAPI: false, dogsAPIII: false, countries: true})
+  setShowPage({home: false, userAPI: true, dogsAPI: false, dogsAPIII: false, countries: false})
 }
 const handleDogs = () => {
-  setShowPage({home: false, userAPI: false, dogsAPI: true, dogsAPIII: false, countries: true})
+  setShowPage({home: false, userAPI: false, dogsAPI: true, dogsAPIII: false, countries: false})
 }
 const handleDogsII = () => {
-  setShowPage({home: false, userAPI: false, dogsAPI: false, dogsAPIII: true, countries: true})
+  setShowPage({home: false, userAPI: false, dogsAPI: false, dogsAPIII: true, countries: false})
 }
 const handleCountries = () => {
   setShowPage({home: false, userAPI: false, dogsAPI: false, dogsAPIII: false, countries: true})
