@@ -10,16 +10,21 @@ COA: coat of arms
 offName: official name
 */
 
-const Card = ({head, COA, offName, flag}) => {
+const Card = ({head, COA, offName, flag, continent, capital}) => {
     const url = flag
     return (
         <div className={classes.container}>
+
         <section className={classes.nameandcoat}>
             <h3 className={classes.headingName}>{head}</h3>
             <div style={{ backgroundImage:`url(${url})`, backgroundSize:"100%", backgroundRepeat: "no-repeat" }} className={classes.flag} alt="flag">
                 </div>
                 <img className={classes.coa} src={COA} alt="coat of arms"/>
             <p className={classes.officialName}>{offName}</p>
+            </section>
+            <section className={classes.sidepanel}>
+                <h4 ClassName={classes.heading}> did you know....</h4>
+                <p className={classes.para}>{head} is a country in {continent} and it's capital city is {capital} </p>
             </section>
         </div>
     )

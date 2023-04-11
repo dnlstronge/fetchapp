@@ -3,6 +3,7 @@ const ValidCountries = {
     spain: "spain",
     italy: "italy",
     germany: "germany",
+    france: "france"
 }
 
 export default ValidCountries;

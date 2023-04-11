@@ -49,7 +49,7 @@ const Countries = () => {
       </p>
       <SearchBar isValid={setIsValid} onClick={setSearch} />
       {Error.isError && <p>Ooops... {error.msg}</p>}
-      {showData && <p>TEST PARAGRAPH</p>}
+  
 
       {showData && data && (
         <Card
@@ -57,6 +57,9 @@ const Countries = () => {
           COA={data[0].coatOfArms.png}
           offName={data[0].name.official}
           flag={data[0].flags.png}
+          continent={data[0].continents[0]}
+          capital={data[0].capital[0]}
+
         />
       )}
     </div>
