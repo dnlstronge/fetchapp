@@ -17,19 +17,28 @@ SearchTerm: local state determined by user input
 const valid = ValidCountries;
 
 
-const SearchBar = ({ onClick, isValid }) => {
+const SearchBar = ({ isValid, onClick }) => {
   const [searchTerm, setSearchTerm] = useState("");
-
+  const [valid, setValid] = useState(false)  
 
   const handleInput = (e) => {
     let input = e.target.value.trim().toLowerCase().replace(/ /g, "")
     if(valid[input]) {
         console.log(valid[input])
+        isValid(true)
+        setValid(true)
+        setSearchTerm(valid[input])
     } else {
+        setValid(false)
+        isValid(false)
         console.log("Error: no country found")
     }
     
   }
+
+   const handleClick = () => {
+
+   }
   return (
     <div className={classes.container}>
       <label className={classes.label} htmlFor="search"></label>
