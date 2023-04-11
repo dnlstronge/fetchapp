@@ -21,3 +21,6 @@
     border-radius: 6px;
     width: 5rem;
 }
+.btn:hover {
+    background: rgb(239, 179, 239);
+}
