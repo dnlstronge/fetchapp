@@ -12,6 +12,10 @@ const Countries = () => {
   const [search, setSearch] = useState("");
   const [isValid, setIsValid] = useState(false);
   const [showData, setShowData] = useState(false);
+  const [error, setError] = useState({
+    isError: true,
+    msg: null
+  })
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -21,13 +25,18 @@ const Countries = () => {
           .then((res) => res.json())
           .then((items) => {
             setData(items);
+            console.log(items)
           });
-          console.log(data)
+          console.log("Data request successfull")
+          setError({isError: false, msg: null})
           setShowData(true)
       } catch (error) {
+        setError({isError: true, msg: error.msg})
         setShowData(false)
         //console.log(error.message);
       }
+    } else {
+        setError({isError: true, msg: "Please enter a valid country"})
     }
   }, [search, isValid]);
 
@@ -39,6 +48,8 @@ const Countries = () => {
         particular country and display data
       </p>
       <SearchBar isValid={setIsValid} onClick={setSearch} />
+      {Error.isError && 
+      <p>Ooops... {error.msg}</p>}
       {showData &&
       <p>TEST PARA</p>}
     </div>
