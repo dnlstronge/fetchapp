@@ -58,8 +58,12 @@ const Countries = () => {
           offName={data[0].name.official}
           flag={data[0].flags.png}
           continent={data[0].continents[0]}
+          subregion={data[0].subregion}
           capital={data[0].capital[0]}
-
+          carside={data[0].car.side}
+          landlocked={data[0].landlocked}
+          population={data[0].population}
+        //   currency={`${data[0].currencies[0].name}`}
         />
       )}
     </div>

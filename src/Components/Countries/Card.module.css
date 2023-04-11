@@ -1,6 +1,7 @@
 .container {
     display: flex;
     width: 80%;
+    margin-top: 2rem;
     flex-direction: row;;
 
 }
@@ -49,17 +50,39 @@
 
 /* side panel */
 
-.sidepanel{
+.sidepanel {
     display: flex;
     flex-direction: column;
     border: 2px solid white;
-    width: 10rem;
+    width: 12rem;
     border-radius: 6px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    padding: 1rem;
+    padding: 0.2rem;
     margin-left: 1rem;
     margin-right: 1rem;
     background: rgb(209, 207, 207);
 
 
+}
+
+.headingSide {
+
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 0.1rem;
+}
+.para {
+    margin-top: 0rem;
+    font-size: 11px;
+    padding: 0.2rem;
+}
+
+.subpara {
+    font-weight: bold;
+    margin-top: 0rem;
+    font-size: 11px;
+    padding: 0.2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: center;
 }
