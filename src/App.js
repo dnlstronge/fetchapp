@@ -6,6 +6,7 @@ import Button from "./UI/Button";
 import Home from "./Components/Home/Home";
 import Dogs from "./Components/Dogs/Dogs";
 import DogsTwo from "./Components/Dogs/DogsTwo";
+import Countries from "./Components/Countries/Countries"
 
 /* [goal] - Use an API to play around with some data */
 
