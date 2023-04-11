@@ -19,28 +19,27 @@ const valid = ValidCountries;
 
 const SearchBar = ({ isValid, onClick }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [valid, setValid] = useState(false)  
+  const [localValidation, setLocalValidation] = useState(false)
 
   const handleInput = (e) => {
     let input = e.target.value.trim().toLowerCase().replace(/ /g, "")
+    console.log(input)
     if(valid[input]) {
-        console.log(valid[input])
-        isValid(true)
-        setValid(true)
+        setLocalValidation(true)
         setSearchTerm(valid[input])
     } else {
-        setValid(false)
-        isValid(false)
+        setLocalValidation(false)
         console.log("Error: no country found")
     }
     
   }
 
    const handleClick = () => {
-        if(valid) {
+        if(localValidation) {
+            isValid(true)
             onClick(searchTerm)
         } else {
-            return;
+            isValid(false)
         }
    }
   return (

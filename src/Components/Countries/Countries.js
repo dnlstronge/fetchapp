@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import classes from "./Countries.module.css";
 import SearchBar from "../../UI/Searchbar";
-import useFetch from "../../Hooks/useFetch";
+
 
 /* new component to try out manipulating data from a different api */
 /* Build custom searchbar component and import */
@@ -9,24 +9,27 @@ import useFetch from "../../Hooks/useFetch";
 /*API = https://restcountries.com/v3.1/name/{name} */
 
 const Countries = () => {
-  const [search, setSearch] = useState("ireland");
-  const [isValid, setIsValid] = useState(true);
+  const [search, setSearch] = useState("");
+  const [isValid, setIsValid] = useState(false);
   const [showData, setShowData] = useState(false);
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    if (isValid) {
+    if (isValid === true) {
       try {
         fetch(`https://restcountries.com/v3.1/name/${search}`)
           .then((res) => res.json())
           .then((items) => {
             setData(items);
           });
+          console.log(data)
+          setShowData(true)
       } catch (error) {
-        console.log(error.message);
+        setShowData(false)
+        //console.log(error.message);
       }
     }
-  }, [search]);
+  }, [search, isValid]);
 
   return (
     <div className={classes.container}>
@@ -36,6 +39,8 @@ const Countries = () => {
         particular country and display data
       </p>
       <SearchBar isValid={setIsValid} onClick={setSearch} />
+      {showData &&
+      <p>TEST PARA</p>}
     </div>
   );
 };
