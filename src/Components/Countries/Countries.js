@@ -1,4 +1,4 @@
-import React, { useState }from "react"
+import React, { useState, useEffect }from "react"
 import classes from "./Countries.module.css"
 import SearchBar from "../../UI/Searchbar"
 import useFetch from "../../Hooks/useFetch"
@@ -11,11 +11,15 @@ import useFetch from "../../Hooks/useFetch"
 
 const Countries = () => {
 
-    const [search, setSearch] = useState(null)
-    const [isValid, setIsValid] = useState(false)
+    const [search, setSearch] = useState("ireland")
+    const [isValid, setIsValid] = useState(true)
 
-    const data = useFetch("https://restcountries.com/v3.1/name/{search}", isValid )
+    const [data] = useFetch(`https://restcountries.com/v3.1/name/ireland`, true )
 
+
+    useEffect(() => {
+        console.log(data)
+    }, [search, data])
     return (
         <div className={classes.container}>
             <h4 className={classes.heading}>Countries API</h4>

@@ -37,13 +37,17 @@ const SearchBar = ({ isValid, onClick }) => {
   }
 
    const handleClick = () => {
-
+        if(valid) {
+            onClick(searchTerm)
+        } else {
+            return;
+        }
    }
   return (
     <div className={classes.container}>
       <label className={classes.label} htmlFor="search"></label>
       <input onChange={handleInput} type="text" className={classes.input} id="search"></input>
-      <button className={classes.btn} onClick={onClick}>
+      <button className={classes.btn} onClick={handleClick}>
         Search
       </button>
     </div>
