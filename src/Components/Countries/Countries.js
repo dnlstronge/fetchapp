@@ -13,7 +13,7 @@ const Countries = () => {
   const [isValid, setIsValid] = useState(false);
   const [showData, setShowData] = useState(false);
   const [error, setError] = useState({
-    isError: true,
+    isError: false,
     msg: null,
   });
   const [data, setData] = useState(null);
@@ -36,7 +36,11 @@ const Countries = () => {
         //console.log(error.message);
       }
     } else {
-      setError({ isError: true, msg: "Please enter a valid country" });
+      if (search.length > 0) {
+        setError({ isError: true, msg: "Please enter a valid country" });
+      } else {
+        setError({ isError: false, msg: null });
+      }
     }
   }, [search, isValid]);
 
@@ -48,7 +52,7 @@ const Countries = () => {
         particular country and display data
       </p>
       <SearchBar isValid={setIsValid} onClick={setSearch} />
-      {Error.isError && <p>Ooops... {error.msg}</p>}
+      {error.isError === true && <p>Ooops... {error.msg}</p>}
 
       {showData && data && (
         <Card
