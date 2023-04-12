@@ -16,38 +16,28 @@ SearchTerm: local state determined by user input
 */
 const valid = ValidCountries;
 
-
-const SearchBar = ({ searchedFor, isValid, onClick }) => {
+const SearchBar = ({ isValid, onClick }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [localValidation, setLocalValidation] = useState(false)
+  const [localValidation, setLocalValidation] = useState(false);
 
   const handleInput = (e) => {
-   searchedFor(e.target.value)
-    let input = e.target.value.trim().toLowerCase().replace(/ /g, "")
-    console.log(input)
-    if(valid[input]) {
-        setLocalValidation(true)
-        setSearchTerm(valid[input])
-    } else {
-        setLocalValidation(false)
-        searchedFor(e.target.value)
-        console.log("Error: no country found")
-    }
-    
-  }
+    let input = e.target.value.trim().toLowerCase().replace(/ /g, "");
 
-   const handleClick = () => {
-        if(localValidation) {
-            isValid(true)
-            onClick(searchTerm)
-        } else {
-            isValid(false)
-        }
-   }
+    setSearchTerm(input);
+  };
+
+  const handleClick = () => {
+    onClick(searchTerm);
+  };
   return (
     <div className={classes.container}>
       <label className={classes.label} htmlFor="search"></label>
-      <input onChange={handleInput} type="text" className={classes.input} id="search"></input>
+      <input
+        onChange={handleInput}
+        type="text"
+        className={classes.input}
+        id="search"
+      ></input>
       <button className={classes.btn} onClick={handleClick}>
         Search
       </button>

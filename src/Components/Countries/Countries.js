@@ -20,10 +20,18 @@ const Countries = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    if (isValid === true) {
+   
       try {
+
         fetch(`https://restcountries.com/v3.1/name/${search}`)
-          .then((res) => res.json())
+        
+          .then((res) => {
+            if(res?.ok) {
+                res.json()
+            } else {
+                setError({isError: true, msg: res.status})
+            }
+          })
           .then((items) => {
             setData(items);
             console.log(items);
@@ -36,11 +44,8 @@ const Countries = () => {
         setShowData(false);
       }
     } else {
-      if (searchItem.length > 0) {
-        setError({ isError: true, msg: `no data found` });
-      } else {
-        setError({ isError: false, msg: null });
-      }
+      setError({isError: true, msg: "No data entries found"})
+      setShowData(false)
     }
   }, [search, isValid, searchItem]);
 
@@ -56,7 +61,7 @@ const Countries = () => {
         isValid={setIsValid}
         onClick={setSearch}
       />
-      {error.isError === true && (
+      {error.isError && search.length > 0 && (
         <p className={classes.error}>Ooops... {error.msg}</p>
       )}
 
