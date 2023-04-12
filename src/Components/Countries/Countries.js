@@ -54,7 +54,7 @@ const Countries = () => {
       <SearchBar isValid={setIsValid} onClick={setSearch} />
       {error.isError === true && <p>Ooops... {error.msg}</p>}
 
-      {showData && data && (
+      {showData && data && !error.isError && (
         <Card
           head={data[0].name.common}
           COA={data[0].coatOfArms.png}
