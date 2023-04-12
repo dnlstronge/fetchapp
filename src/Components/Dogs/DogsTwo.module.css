@@ -1,7 +1,7 @@
 .container {
     
-    margin-left: 4rem;
-    margin-right: 4rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
     margin-bottom: 40%;
 }
 .section {
@@ -9,18 +9,18 @@
 }
 .heading {
     color: white;
-    text-align: left;
-    margin-left: 4rem;
-    margin-right: 4rem;
+    text-align: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 .content {
     display: flex;
     flex-direction: column;
     height: auto;
-    width: 70%;
+    width: 95%;
     color: white;
-    margin-left: 4rem;
-    margin-right: 4rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 
 }
 .para {
@@ -32,9 +32,9 @@
     flex-wrap: wrap;
     flex-direction: row;
     margin-top: 1rem;
-    margin-left: 4rem;
-    margin-right: 4rem;
-    width: 90%;
+    margin-left: 0.5em;
+    margin-right: 0.5rem;
+    width: 95%;
     height: auto;
 }
 .images {

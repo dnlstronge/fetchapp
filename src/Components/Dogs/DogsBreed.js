@@ -29,7 +29,7 @@ const DogsBreed = () => {
   };
 
   const dogs = useFetch(
-    `https://dog.ceo/api/breed/${breedSelect}/images/random/3`,
+    `https://dog.ceo/api/breed/${breedSelect}/images/random/4`,
     validURL
   );
 

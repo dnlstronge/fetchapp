@@ -91,7 +91,9 @@
     transition: transform .2s;
 }
 .userbox:hover {
-    transform: scale(2.0);
+    transform: scale(2.1);
+    border: 2px solid white;
+    
 }
 .userpara {
     color: white;

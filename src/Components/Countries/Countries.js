@@ -53,10 +53,30 @@ const Countries = () => {
     <div className={classes.container}>
       <h4 className={classes.heading}>Countries API</h4>
       <p className={classes.para}>
-        This section uses the countries api, it allows users to search for a
+        This section uses the countries REST api, it allows users to search for a
         particular country and display data which is specific to each. The search also returns 
         the specific coat of arms, flag and some general data about the country. 
       </p>
+      <p className={classes.subPara}>
+            {`Url: `}
+            <a
+              target="blank"
+              className={classes.subAnchor}
+              href="https://restcountries.com/"
+            >
+              https://restcountries.com/
+            </a>
+          </p>
+          <p className={classes.subPara}>
+            {`Code: `}
+            <a
+              target="blank"
+              className={classes.subAnchor}
+              href="https://github.com/dnlstronge/fetchapp/tree/master/src/Components/Countries"
+            >
+              https://github.com/dnlstronge/fetchapp
+            </a>
+            </p>
       <SearchBar onClick={setSearch} />
       {error.isError && search.length > 0 && (
         <p className={classes.error}>Ooops... {error.msg}</p>
