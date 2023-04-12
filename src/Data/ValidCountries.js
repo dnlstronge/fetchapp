@@ -11,6 +11,7 @@ const ValidCountries = {
     sweden: "sweden",
     belgium: "belgium",
     finland: "finland",
+    portugal: "portugal",
 
 }
 

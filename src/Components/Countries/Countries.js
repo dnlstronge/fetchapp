@@ -56,7 +56,7 @@ const Countries = () => {
         isValid={setIsValid}
         onClick={setSearch}
       />
-      {error.isError === true && showData && (
+      {error.isError === true && (
         <p className={classes.error}>Ooops... {error.msg}</p>
       )}
 

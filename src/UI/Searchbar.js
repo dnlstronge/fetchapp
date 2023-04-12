@@ -30,6 +30,7 @@ const SearchBar = ({ searchedFor, isValid, onClick }) => {
         setSearchTerm(valid[input])
     } else {
         setLocalValidation(false)
+        searchedFor(e.target.value)
         console.log("Error: no country found")
     }
     
