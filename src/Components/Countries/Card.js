@@ -50,29 +50,29 @@ const Card = ({
         <div className={classes.subsection}>
           <ul className={classes.list}>
             <li className={classes.listitem}>
-              <p className={classes.listpara}>Region</p>
+              <p className={classes.listpara}>Region: </p>
               <p className={classes.listpara}>{subregion}</p>
             </li>
             <li className={classes.listitem}>
-              <p className={classes.listpara}>Capital City</p>
+              <p className={classes.listpara}>Capital City: </p>
               <p className={classes.listpara}>{capital}</p>
             </li>
             <li className={classes.listitem}>
-              <p className={classes.listpara}>Population</p>
+              <p className={classes.listpara}>Population: </p>
               <p className={classes.listpara}>{population}</p>
             </li>
             <li className={classes.listitem}>
-              <p className={classes.listpara}>Drive on </p>
+              <p className={classes.listpara}>Drive on: </p>
               <p className={classes.listpara}>{carside}</p>
             </li>
             {landlocked && 
             <li className={classes.listitem}>
-              <p className={classes.listpara}>Landlocked</p>
+              <p className={classes.listpara}>Landlocked: </p>
               <p className={classes.listpara}>Yes</p>
             </li> }
             {!landlocked && 
             <li className={classes.listitem}>
-              <p className={classes.listpara}>Landlocked</p>
+              <p className={classes.listpara}>Landlocked: </p>
               <p className={classes.listpara}>No</p>
             </li> }
           </ul>

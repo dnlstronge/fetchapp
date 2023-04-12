@@ -54,7 +54,7 @@
     display: flex;
     flex-direction: column;
     border: 2px solid white;
-    width: 12rem;
+    width: 14rem;
     border-radius: 6px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 0.2rem;
@@ -64,11 +64,37 @@
 
 
 }
+.headingSide {
+    text-align: center;
+}
 
 .list {
-
+    display: flex;
+    flex-direction: column;
+    margin: 0.2rem;
+    padding: 0;
 }
 
 .listitem {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    margin: 0.1rem;
+    margin-left: 0rem;
+    padding: 0.2rem;
+    background-color: purple;
+    border: 1px solid white;
+    border-radius: 6px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.listpara {
+    display: flex;
+    height: 2rem;
+    color: white;
+    font-size: 12px;;
+    padding: 0.1rem;
     
+    
+    
+   
 }
