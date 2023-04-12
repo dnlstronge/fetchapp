@@ -10,6 +10,7 @@ import Card from "./Card";
 
 const Countries = () => {
   const [search, setSearch] = useState("");
+  const [searchItem, setSearchItem] = useState("");
   const [isValid, setIsValid] = useState(false);
   const [showData, setShowData] = useState(false);
   const [error, setError] = useState({
@@ -33,16 +34,15 @@ const Countries = () => {
       } catch (error) {
         setError({ isError: true, msg: error.msg });
         setShowData(false);
-        //console.log(error.message);
       }
     } else {
-      if (search.length > 0) {
-        setError({ isError: true, msg: "Please enter a valid country" });
+      if (searchItem.length > 0) {
+        setError({ isError: true, msg: `no data found` });
       } else {
         setError({ isError: false, msg: null });
       }
     }
-  }, [search, isValid]);
+  }, [search, isValid, searchItem]);
 
   return (
     <div className={classes.container}>
@@ -51,8 +51,14 @@ const Countries = () => {
         This section uses the countries api, it allows users to search for a
         particular country and display data
       </p>
-      <SearchBar isValid={setIsValid} onClick={setSearch} />
-      {error.isError === true && <p>Ooops... {error.msg}</p>}
+      <SearchBar
+        searchedFor={setSearchItem}
+        isValid={setIsValid}
+        onClick={setSearch}
+      />
+      {error.isError === true && showData && (
+        <p className={classes.error}>Ooops... {error.msg}</p>
+      )}
 
       {showData && data && !error.isError && (
         <Card

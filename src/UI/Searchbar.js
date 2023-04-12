@@ -17,11 +17,12 @@ SearchTerm: local state determined by user input
 const valid = ValidCountries;
 
 
-const SearchBar = ({ isValid, onClick }) => {
+const SearchBar = ({ searchedFor, isValid, onClick }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [localValidation, setLocalValidation] = useState(false)
 
   const handleInput = (e) => {
+   searchedFor(e.target.value)
     let input = e.target.value.trim().toLowerCase().replace(/ /g, "")
     console.log(input)
     if(valid[input]) {
