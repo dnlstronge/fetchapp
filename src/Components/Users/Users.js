@@ -17,7 +17,9 @@ const Users = () => {
   const fetchUsers = async () => {
     setIsloading(true);
     try {
-      const response = await fetch("https://jsonplaceholder.typicode.com/users");
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/users"
+      );
       const data = await response.json();
       if (response?.ok) {
         setError({ isError: false, status: null, msg: null });
@@ -72,9 +74,10 @@ const Users = () => {
             (users) and displays different users inside a panel. A filter can
             then be applied to the cards shown based on username. Click show to
             get data.
-            <br></br><br></br>
-            I've added custom error handling for errors which fall beyond the scope
-            of the fetch API.
+            <br></br>
+            <br></br>
+            I've added custom error handling for errors which fall beyond the
+            scope of the fetch API.
           </p>
           <p className={classes.subPara}>
             {`Url: `}
@@ -83,7 +86,7 @@ const Users = () => {
               className={classes.subAnchor}
               href="https://jsonplaceholder.typicode.com/"
             >
-                 https://jsonplaceholder.typicode.com
+              https://jsonplaceholder.typicode.com
             </a>
           </p>
           <p className={classes.subPara}>
@@ -93,17 +96,16 @@ const Users = () => {
               className={classes.subAnchor}
               href="https://github.com/dnlstronge/fetchapp/tree/master/src/Components/Users"
             >
-                 https://github.com/dnlstronge/fetchapp
+              https://github.com/dnlstronge/fetchapp
             </a>
           </p>
-          </div>
+        </div>
       </section>
       <button onClick={buttonHandler} className={classes.btn}>
         {toggleUsers ? "Hide Users" : "Show Users"}
       </button>
       {error.isError && <ErrorComp status={error.status} msg={error.msg} />}
-      {isLoading &&
-       <div className={classes.loading}>Loading....</div>}
+      {isLoading && <div className={classes.loading}>Loading....</div>}
       {toggleUsers && !error.isError && (
         <label className={classes.searchbarLabel} htmlFor="searchinput">
           Filter by username
