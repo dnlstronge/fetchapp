@@ -45,18 +45,37 @@ const Card = ({
         <p className={classes.officialName}>{offName}</p>
       </section>
       <section className={classes.sidepanel}>
-        <h4 className={classes.headingSide}> did you know....</h4>
-        <p className={classes.para}>
-          {head} is a country in {subregion} and it's capital city is {capital}.
-          In {head} they drive {carside}-hand side of the road.{" "}
-        </p>
-        {landlocked && (
-          <p className={classes.para}>
-            This country is landlocked by surrounding countries.
-          </p>
-        )}
+        <h4 className={classes.headingSide}> about...</h4>
+
         <div className={classes.subsection}>
-          <p className={classes.subpara}>Population: {population}</p>
+          <ul className={classes.list}>
+            <li className={classes.listitem}>
+              <p className={classes.listpara}>Region</p>
+              <p className={classes.listpara}>{subregion}</p>
+            </li>
+            <li className={classes.listitem}>
+              <p className={classes.listpara}>Capital City</p>
+              <p className={classes.listpara}>{capital}</p>
+            </li>
+            <li className={classes.listitem}>
+              <p className={classes.listpara}>Population</p>
+              <p className={classes.listpara}>{population}</p>
+            </li>
+            <li className={classes.listitem}>
+              <p className={classes.listpara}>Drive on </p>
+              <p className={classes.listpara}>{carside}</p>
+            </li>
+            {landlocked && 
+            <li className={classes.listitem}>
+              <p className={classes.listpara}>Landlocked</p>
+              <p className={classes.listpara}>Yes</p>
+            </li> }
+            {!landlocked && 
+            <li className={classes.listitem}>
+              <p className={classes.listpara}>Landlocked</p>
+              <p className={classes.listpara}>No</p>
+            </li> }
+          </ul>
         </div>
       </section>
     </div>
