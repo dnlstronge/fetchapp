@@ -9,7 +9,7 @@ import Card from "./Card";
 /*API = https://restcountries.com/v3.1/name/{name} */
 
 const Countries = () => {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
   const [showData, setShowData] = useState(false);
   const [error, setError] = useState({
@@ -19,30 +19,27 @@ const Countries = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    setError({isError: false, msg: null})
+    setError({ isError: false, msg: null });
     if (search.length > 0) {
-      setLoading(true)
+      setLoading(true);
       try {
         fetch(`https://restcountries.com/v3.1/name/${search}`).then((res) => {
           console.log(search);
           console.log(res);
           if (res.ok) {
-            
             res.json().then((items) => {
               setData(items);
               setShowData(true);
-              setLoading(false)
+              setLoading(false);
             });
           } else {
-            setLoading(false)
+            setLoading(false);
             setShowData(false);
             setError({ isError: true, msg: "No results found" });
           }
         });
-
-        
       } catch (error) {
-        setLoading(false)
+        setLoading(false);
         setError({ isError: true, msg: error.msg });
         setShowData(false);
       }
@@ -53,36 +50,36 @@ const Countries = () => {
     <div className={classes.container}>
       <h4 className={classes.heading}>Countries API</h4>
       <p className={classes.para}>
-        This section uses the countries REST api, it allows users to search for a
-        particular country and display data which is specific to each. The search also returns 
-        the specific coat of arms, flag and some general data about the country. 
+        This section uses the countries REST api, it allows users to search for
+        a particular country and display data which is specific to each. The
+        search also returns the specific coat of arms, flag and some general
+        data about the country.
       </p>
       <p className={classes.subPara}>
-            {`Url: `}
-            <a
-              target="blank"
-              className={classes.subAnchor}
-              href="https://restcountries.com/"
-            >
-              https://restcountries.com/
-            </a>
-          </p>
-          <p className={classes.subPara}>
-            {`Code: `}
-            <a
-              target="blank"
-              className={classes.subAnchor}
-              href="https://github.com/dnlstronge/fetchapp/tree/master/src/Components/Countries"
-            >
-              https://github.com/dnlstronge/fetchapp
-            </a>
-            </p>
+        {`Url: `}
+        <a
+          target="blank"
+          className={classes.subAnchor}
+          href="https://restcountries.com/"
+        >
+          https://restcountries.com/
+        </a>
+      </p>
+      <p className={classes.subPara}>
+        {`Code: `}
+        <a
+          target="blank"
+          className={classes.subAnchor}
+          href="https://github.com/dnlstronge/fetchapp/tree/master/src/Components/Countries"
+        >
+          https://github.com/dnlstronge/fetchapp
+        </a>
+      </p>
       <SearchBar onClick={setSearch} />
       {error.isError && search.length > 0 && (
         <p className={classes.error}>Ooops... {error.msg}</p>
       )}
-      {loading && 
-        <p className={classes.error}>Loading...</p>}
+      {loading && <p className={classes.error}>Loading...</p>}
 
       {showData && data && !error.isError && (
         <Card
