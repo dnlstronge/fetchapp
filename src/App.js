@@ -48,7 +48,7 @@ const handleCountries = () => {
         <Button onClick={handleHome} id="Home" text="Home" />
         <Button onClick={handleUser} id="userAPI" text="User API" />
         <Button onClick={handleDogs} id="Dogs API" text="Dogs API" />
-        <Button onClick={handleDogsII} id="Dogs API II" text="Dogs API II" />
+        <Button onClick={handleDogsII} id="Dogs API II" text="Dogs API-2" />
         <Button onClick={handleCountries} id="countries" text="Countries API" />
       </div>
       {showPage.home &&

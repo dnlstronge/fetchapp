@@ -1,24 +1,24 @@
 
 .section {
     color: white;
-    margin-left: 4rem;
-    margin-right: 4rem;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
 }
 
 .heading {
     color: white;
-    text-align: left;
-    margin-left: 4rem;
-    margin-right: 4rem;
+    text-align: center;
+    margin-left: 0.5rem;
+    margin-right: 10.5
 }
 .content {
     display: flex;
     flex-direction: column;
     height: auto;
-    width: 70%;
+    width: 95%;
     color: white;
-    margin-left: 4rem;
-    margin-right: 4rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 
 }
 
@@ -31,8 +31,8 @@
     justify-content: left;
     height: auto;
     width: auto;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 1rem;
+    margin-right: 1rem;
     margin-bottom: 60%;
     background-color: white;
     border-radius: 5px;
@@ -61,14 +61,14 @@
     width: 8rem;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    margin-left: 40%;
-    margin-right: 40%;
+    margin-left: 2rem;
+    margin-right: 2rem;
     margin-bottom: 3rem;
     padding: 0.2rem;
     padding-top: 1rem;
     padding-left: 1rem;
     text-align: center;
-
+    align-self: center;
 }
 
 .btn:hover {
