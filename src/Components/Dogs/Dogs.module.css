@@ -1,8 +1,9 @@
 .container {
-    
-    margin-left: 4rem;
-    margin-right: 4rem;
+
+    margin-left: 1rem;
+    margin-right: 1rem;
     margin-bottom: 1rem;
+   
 }
 
 
@@ -10,18 +11,18 @@
     color: white;
 }
 .heading {
-    text-align: left;
-    margin-left: 4rem;
-    margin-right: 4rem;
+    text-align: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 .content {
     display: flex;
     flex-direction: column;
     height: auto;
-    width: 70%;
+    width: 95%;
     color: white;
-    margin-left: 4rem;
-    margin-right: 4rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 
 }
 
@@ -30,22 +31,25 @@
     color:rgb(222, 169, 222)
 }
 .btnsection {
-    margin-left: 4rem;
-    margin-right: 4rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    align-self: center;
+    align-items: center;
 }
 .sectionImages {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    margin-left: 4rem;
-    margin-right: 4rem;
-    width: 90%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 95%;
     height: auto;
+    align-items: center;
 }
 .images {
     display: flex;
-    height: 10rem;
-    width: 10rem;
+    height: 8rem;
+    width: 8rem;
     border-radius: 5px;
     border: 2px solid white;
     margin: 0.5rem;
