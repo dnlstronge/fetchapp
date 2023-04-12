@@ -10,8 +10,6 @@ import Card from "./Card";
 
 const Countries = () => {
   const [search, setSearch] = useState("");
-  const [searchItem, setSearchItem] = useState("");
-  const [isValid, setIsValid] = useState(false);
   const [showData, setShowData] = useState(false);
   const [error, setError] = useState({
     isError: false,
@@ -20,34 +18,30 @@ const Countries = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-   
+    setError({isError: false, msg: null})
+    if (search.length > 0) {
       try {
+        fetch(`https://restcountries.com/v3.1/name/${search}`).then((res) => {
+          console.log(search);
+          console.log(res);
+          if (res.ok) {
+            res.json().then((items) => {
+              setData(items);
+              setShowData(true);
+            });
+          } else {
+            setShowData(false);
+            setError({ isError: true, msg: res.status });
+          }
+        });
 
-        fetch(`https://restcountries.com/v3.1/name/${search}`)
         
-          .then((res) => {
-            if(res?.ok) {
-                res.json()
-            } else {
-                setError({isError: true, msg: res.status})
-            }
-          })
-          .then((items) => {
-            setData(items);
-            console.log(items);
-          });
-
-        setError({ isError: false, msg: null });
-        setShowData(true);
       } catch (error) {
         setError({ isError: true, msg: error.msg });
         setShowData(false);
       }
-    } else {
-      setError({isError: true, msg: "No data entries found"})
-      setShowData(false)
     }
-  }, [search, isValid, searchItem]);
+  }, [search, setError, setShowData]);
 
   return (
     <div className={classes.container}>
@@ -56,11 +50,7 @@ const Countries = () => {
         This section uses the countries api, it allows users to search for a
         particular country and display data
       </p>
-      <SearchBar
-        searchedFor={setSearchItem}
-        isValid={setIsValid}
-        onClick={setSearch}
-      />
+      <SearchBar onClick={setSearch} />
       {error.isError && search.length > 0 && (
         <p className={classes.error}>Ooops... {error.msg}</p>
       )}
